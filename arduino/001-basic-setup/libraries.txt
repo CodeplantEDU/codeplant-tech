@@ -1,0 +1,3 @@
+Arduino AVR Boards (Arduino): install the current stable package in Boards Manager.
+Board: Arduino Uno (UNO R3), FQBN arduino:avr:uno.
+No external libraries required.
