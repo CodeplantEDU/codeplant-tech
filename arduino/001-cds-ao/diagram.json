@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "author": "Codex - wokwi-circuit-builder",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-uno",
+      "id": "uno",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "cds",
+      "top": 250,
+      "left": 330,
+      "attrs": {
+        "lux": "500"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "uno:5V",
+      "cds:VCC",
+      "red",
+      ["v50", "h290", "v-145"]
+    ],
+    [
+      "uno:GND.2",
+      "cds:GND",
+      "black",
+      ["v65", "h300", "v-135"]
+    ],
+    [
+      "uno:A0",
+      "cds:AO",
+      "yellow",
+      ["v80", "h275", "v-120"]
+    ]
+  ],
+  "dependencies": {}
+}
