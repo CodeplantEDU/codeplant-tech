@@ -2,7 +2,139 @@
   "version": 1,
   "author": "CODEPLANT",
   "editor": "wokwi",
-  "parts": [{"type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {}}],
+  "parts": [
+    {
+      "type": "wokwi-arduino-uno",
+      "id": "uno",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    }
+  ],
   "connections": [],
-  "dependencies": {}
+  "dependencies": {},
+  "photoAnnotations": {
+    "source": "uno-r3-top-photo.jpg",
+    "coordinateSpace": [
+      1797,
+      1375
+    ],
+    "reference": "https://docs.arduino.cc/resources/pinouts/A000066-full-pinout.pdf",
+    "signals": [
+      {
+        "number": 1,
+        "function": "디지털 D0~D13",
+        "representativePinLocation": [
+          635,
+          384
+        ]
+      },
+      {
+        "number": 2,
+        "function": "PWM (~ 표시)",
+        "representativePinLocation": [
+          779,
+          320
+        ]
+      },
+      {
+        "number": 3,
+        "function": "ADC · A0~A5",
+        "representativePinLocation": [
+          1390,
+          725
+        ]
+      },
+      {
+        "number": 4,
+        "function": "RX(0) · TX(1)",
+        "representativePinLocation": [
+          1108,
+          164
+        ]
+      },
+      {
+        "number": 5,
+        "function": "SDA(A4)·SCL(A5)",
+        "representativePinLocation": [
+          1540,
+          652
+        ]
+      },
+      {
+        "number": 6,
+        "function": "AREF",
+        "representativePinLocation": [
+          565,
+          407
+        ]
+      }
+    ],
+    "power": [
+      {
+        "number": 1,
+        "pin": "VIN",
+        "pinLocations": [
+          [
+            1305,
+            744
+          ]
+        ]
+      },
+      {
+        "number": 2,
+        "pin": "5V",
+        "pinLocations": [
+          [
+            1196,
+            804
+          ]
+        ]
+      },
+      {
+        "number": 3,
+        "pin": "3.3V",
+        "pinLocations": [
+          [
+            1160,
+            823
+          ]
+        ]
+      },
+      {
+        "number": 4,
+        "pin": "GND",
+        "pinLocations": [
+          [
+            1232,
+            786
+          ],
+          [
+            1269,
+            766
+          ]
+        ]
+      },
+      {
+        "number": 5,
+        "pin": "IOREF",
+        "pinLocations": [
+          [
+            1087,
+            862
+          ]
+        ]
+      },
+      {
+        "number": 6,
+        "pin": "RESET",
+        "pinLocations": [
+          [
+            1124,
+            843
+          ]
+        ]
+      }
+    ]
+  }
 }

@@ -22,6 +22,38 @@ Arduino UNO R3 기준입니다. PC에서 문자 `1` 또는 `0`을 보내면, 보
 
 ## 신호의 차이
 
+### 실제 보드에서 위치 찾기
+
+![실제 UNO R3 사진에 표시한 입력·출력·통신 기능](pin-signals.png)
+
+번호는 해당 기능을 가진 대표 핀의 위치입니다. 같은 번호의 설명과 연결해서 읽으세요. PWM은 디지털 핀 전체에 있는 기능이 아니라 아래 여섯 핀에만 있습니다. A4·A5는 아날로그 입력과 I2C 통신에서 역할을 공유합니다.
+
+![POWER 헤더 실제 사진 확대와 전원·기준·리셋 핀 위치](pin-power.png)
+
+전원 헤더는 사진의 확대 표시 안에 있습니다. 확대 사진에서는 핀마다 번호를 표시했고 GND 두 핀은 같은 4번으로 표시했습니다. 사진을 그린 그림으로 대체하지 않았습니다. 실제 사진 위에 위치 번호·설명을 배치한 안내입니다.
+
+### VIN·전원·GND·기준 핀은 무엇인가요?
+
+| 핀 | 역할과 사용할 때의 구분 |
+| --- | --- |
+| VIN | 외부 전원 입력. 공식 권장 7~12V를 받아 보드의 전원 회로로 보냅니다. USB 실습에서는 연결하지 않습니다. 센서의 5V 전원선과 혼동하지 않습니다. |
+| 5V | 보드의 5V 전원 출력. 5V를 지원하는 센서의 전원 공급에 사용합니다. 공식 안내는 이 핀에 외부 전원을 직접 넣는 방법을 권장하지 않습니다. |
+| 3.3V | 보드의 3.3V 전원 출력. 공식 최대 전류는 50mA입니다. 전압이 맞아도 연결 장치의 전류 요구를 확인합니다. |
+| GND | 회로의 공통 0V 기준. 센서 GND와 UNO GND를 연결하면 두 장치가 같은 기준으로 전압을 읽습니다. POWER 헤더의 두 GND는 같은 기준입니다. |
+| IOREF | 보드의 동작전압 기준을 쉴드 등에 알리는 핀. UNO R3에서는 5V입니다. AREF와 역할이 다릅니다. |
+| AREF | ADC의 기준전압 입력. 외부 기준전압을 사용할 때 analogReference 설정과 함께 사용합니다. 이번 기본 예제에서는 연결하지 않습니다. |
+| RESET | LOW가 되면 마이크로컨트롤러가 재시작하고 코드가 처음부터 실행됩니다. 일반 센서값을 읽는 핀이 아닙니다. |
+
+공식 근거: [Arduino UNO R3의 Power / Input and Output 설명](https://store.arduino.cc/products/arduino-uno-rev3), [공식 핀아웃](https://docs.arduino.cc/resources/pinouts/A000066-full-pinout.pdf). 권장 VIN 전압 7~12V와 한계 범위 6~20V는 같은 의미가 아닙니다. 입문 자료에서는 권장 범위를 안내하며 한계 전압을 실습 목표로 삼지 않습니다.
+
+### 통신 핀의 역할
+
+- **RX(0) / TX(1)**: 시리얼 문자를 받고 보내는 핀. UNO의 USB 시리얼과 공유하므로 이번 실습에서는 외부 장치를 연결하지 않습니다.
+- **SDA(A4) / SCL(A5)**: I2C의 데이터 / 클록 신호. UNO R3의 별도 SDA·SCL 헤더도 각각 A4·A5와 같은 신호입니다.
+- **SPI**: D10=SS, D11=COPI(MOSI), D12=CIPO(MISO), D13=SCK. 장치를 고르고 데이터를 보내고 받으며 클록으로 동기화합니다. D13은 이 기능과 내장 LED를 공유합니다.
+
+실제 핀·통신 방식은 센서별 공식 연결 자료를 따릅니다. 이름이 같다고 다른 보드의 핀 번호와 전압을 복사하지 않습니다.
+
 | 종류 | 뜻 | UNO R3에서 쓰는 함수 / 값 |
 | --- | --- | --- |
 | 디지털 입력 | 핀의 전압을 두 상태로 판단 | `digitalRead(pin)` → `LOW`(0) 또는 `HIGH`(1) |
@@ -141,6 +173,8 @@ void loop() {
 | ide2-screen.png, ide-serial-screen.png | [Arduino Documentation / Karl Söderby](https://docs.arduino.cc/software/ide-v2/tutorials/ide-v2-serial-monitor/), [원본 문서 저장소 라이선스](https://github.com/arduino/docs-content/blob/main/LICENSE.md); 공식 참고 화면, 이미지 내용 수정 없음 |
 | ide-tools-screen.png | [Arduino Help Center 보드·포트 안내](https://support.arduino.cc/hc/en-us/articles/4406856349970-Select-board-and-port-in-Arduino-IDE), [원본 이미지](https://support.arduino.cc/hc/article_attachments/6366428819228), [저장소 라이선스](https://github.com/arduino/help-center-content/blob/main/LICENSE.md); 공식 참고 화면 |
 | usb-connection.png, circuit_preview.html | CODEPLANT 작성 USB 개념도; SparkFun UNO 사진 포함, 기술 사양 그림이나 실제 배선 사진이 아님 |
+| uno-r3-top-photo.jpg | [Dllu의 실제 Arduino Uno R3 사진](https://commons.wikimedia.org/wiki/File:Arduino_Uno_dllu.jpg), [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/); 원본 JPEG 재사용 |
+| pin-signals.png, pin-power.png | 위 Dllu 사진에 CODEPLANT가 위치 번호·기능 설명·확대 표시를 추가. [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). 위치와 핀 순서는 Arduino 공식 핀아웃과 대조 |
 
 Arduino docs-content의 LICENSE.md는 상단 설명의 CC BY 4.0 링크와 본문 CC BY-SA 4.0 텍스트가 함께 있습니다. 본 자료의 문서와 Documentation 화면을 포함한 표지 카드는 보수적으로 **[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)**으로 제공합니다. 사진과 외부 화면은 위 원본 조건을 함께 따릅니다. CODEPLANT와 Arduino의 상표·로고 권리는 각 소유자에게 있으며 브랜드의 승인을 받았다는 뜻이 아닙니다.
 
@@ -148,6 +182,6 @@ Arduino docs-content의 LICENSE.md는 상단 설명의 CC BY 4.0 링크와 본�
 
 2026-10-06, 설치된 Arduino CLI와 Arduino AVR Boards 1.8.6으로 `arduino:avr:uno` 컴파일을 통과했습니다. 프로그램 1,888바이트, 전역 변수 228바이트입니다. 저장소의 sketch.ino와 위 전체 코드가 같고, diagram.json은 UNO 한 대·외부 GPIO 배선 없음임을 `verify-local.mjs`로 확인했습니다. servo/조도센서 배선 전용 스킬 검증기는 이번 USB 개념도에 적용하지 않았습니다.
 
-기존 check.mjs를 PORT=8773, CODEPLANT_CHECK_EPISODE=arduino-002-signal-processing으로 실행해 6장 전체 레이아웃·블루 배경·사진 로딩·모바일·캡션 복사·저장·카드 내부 이미지 붙여넣기를 확인했습니다. 전체 PNG를 눈으로 검토했으며, 4번 카드의 푸터 겹침을 수정했습니다. 세 관점은 제작자의 자체 검토이며 실제 디자이너·학생·선생님에게 피드백을 받은 것으로 주장하지 않습니다.
+기존 check.mjs를 PORT=8773, CODEPLANT_CHECK_EPISODE=arduino-002-signal-processing으로 실행해 10장 전체 레이아웃·블루 배경·사진 로딩·모바일·캡션 복사·저장·카드 내부 이미지 붙여넣기를 확인했습니다. 실제 보드 사진의 핀 번호와 POWER 헤더 확대 표시를 대조하고, 신호 위치 번호의 겹침을 분리했습니다. 초기 6장 제작 때의 4번 푸터 겹침도 수정했습니다. 세 관점은 제작자의 자체 검토이며 실제 디자이너·학생·선생님에게 피드백을 받은 것으로 주장하지 않습니다.
 
 **실제 UNO 업로드와 하드웨어 동작은 미시험**입니다. ADC·PWM은 개념 설명이며 실제 측정·파형 확인을 하지 않았습니다. 컴파일 성공과 예상 출력 설명을 실제 보드 실행 성공으로 해석하지 마세요.
