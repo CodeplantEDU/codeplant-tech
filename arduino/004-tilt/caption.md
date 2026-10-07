@@ -1,0 +1,15 @@
+기울기를 감지하는 스위치 · 아두이노 UNO 버전
+
+댓글에 'git'을 남기면 전체 코드와 연결 방법이 있는 GitHub 링크를 DM으로 보내드려요.
+
+2핀 볼 스위치를 천천히 기울여 보세요. 두 접점이 붙으면 시리얼 값은 0, 보드의 L LED는 켜집니다. 떨어지면 1과 LED 꺼짐을 확인할 수 있습니다. 각도를 숫자로 재는 센서는 아닙니다.
+
+준비물: Arduino UNO R3, 2핀 볼 기울기 스위치, 브레드보드, 점퍼선 2개, USB 데이터 케이블. USB를 빼고 한 다리는 D2, 다른 다리는 GND에 연결하세요. 같은 브레드보드 연결 줄에 두 다리를 꽂지 마세요. 5V 전원선과 외부 풀업 저항은 필요하지 않습니다. 3핀 모듈에는 이 배선을 그대로 적용하지 않습니다.
+
+Arduino IDE에서 전체 코드를 업로드하고 시리얼 모니터를 9600 baud로 엽니다. 처음 상태와 이후 안정된 상태 변화만 출력합니다. 접점이 50ms 유지된 뒤 LED 상태를 바꾸며, 흔들림이 계속되면 확정이 늦어질 수 있습니다.
+
+전체 코드와 연결 방법: https://github.com/CodeplantEDU/codeplant-tech/tree/main/arduino/004-tilt
+
+사진: SparkFun Electronics(CC BY 2.0), lady ada / Adafruit(CC BY-SA 3.0, 원본 사진 표시 크기만 조절). 회로 부품 도형: Wokwi, Fritzing(Lionel Michel). 사진·회로의 출처와 사용 조건은 저장소 README를 확인하세요.
+
+#코드플랜트 #CODEPLANT #아두이노 #Arduino #디지털센서 #기울기센서 #기울기스위치 #코딩교육

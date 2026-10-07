@@ -1,0 +1,100 @@
+{
+  "version": 1,
+  "editor": "codeplant",
+  "author": "CODEPLANT",
+  "note": "2핀 실제 접점 부품. Wokwi의 3핀 tilt-switch 모듈로 대체하지 않음. 편집용 좌표·연결 데이터이며 시뮬레이터 실행 검증 아님.",
+  "parts": [
+    {
+      "id": "uno",
+      "type": "wokwi-arduino-uno",
+      "left": 60,
+      "top": 200,
+      "scale": 2,
+      "pins": {
+        "2": [
+          236.5,
+          9
+        ],
+        "GND.2": [
+          169.5,
+          191.5
+        ]
+      },
+      "source": "https://github.com/wokwi/wokwi-elements/blob/main/src/arduino-uno-element.ts"
+    },
+    {
+      "id": "tilt",
+      "type": "fritzing-two-pin-ball-switch",
+      "left": 720,
+      "top": 250,
+      "scale": 8,
+      "pins": {
+        "1": [
+          14.367,
+          27.819
+        ],
+        "2": [
+          21.582,
+          27.819
+        ]
+      },
+      "source": "https://github.com/fritzing/fritzing-parts/blob/develop/svg/core/breadboard/tilt_switch.svg"
+    }
+  ],
+  "connections": [
+    [
+      "uno:2",
+      "tilt:1",
+      "yellow",
+      [
+        [
+          533,
+          218
+        ],
+        [
+          533,
+          130
+        ],
+        [
+          650,
+          130
+        ],
+        [
+          650,
+          570
+        ],
+        [
+          834.936,
+          570
+        ],
+        [
+          834.936,
+          472.552
+        ]
+      ]
+    ],
+    [
+      "uno:GND.2",
+      "tilt:2",
+      "black",
+      [
+        [
+          399,
+          583
+        ],
+        [
+          399,
+          620
+        ],
+        [
+          892.656,
+          620
+        ],
+        [
+          892.656,
+          472.552
+        ]
+      ]
+    ]
+  ]
+}
