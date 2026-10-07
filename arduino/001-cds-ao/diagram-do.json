@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "author": "Codex - wokwi-circuit-builder",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-uno",
+      "id": "uno",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "cds",
+      "top": 250,
+      "left": 330,
+      "attrs": {
+        "lux": "500"
+      },
+      "rotate": 180
+    }
+  ],
+  "connections": [
+    [
+      "uno:5V",
+      "cds:VCC",
+      "red",
+      [
+        "v50",
+        "h290",
+        "v-145"
+      ]
+    ],
+    [
+      "uno:GND.2",
+      "cds:GND",
+      "black",
+      [
+        "v65",
+        "h300",
+        "v-135"
+      ]
+    ],
+    [
+      "uno:2",
+      "cds:DO",
+      "blue",
+      [
+        "v-40",
+        "h136",
+        "v162"
+      ]
+    ]
+  ],
+  "dependencies": {},
+  "description": "DO 실습: VCC=5V, GND=GND.2, DO=D2, AO 미사용. AO 실습 회로와 별도 연결."
+}

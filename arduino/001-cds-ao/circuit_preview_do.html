@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Arduino UNO + 모듈형 CDS 센서 DO 회로</title>
+  <script type="module" src="https://unpkg.com/@wokwi/elements@1.9.2/dist/wokwi-elements.bundle.js"></script>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: 100%; height: 100%; background: #eef3f7; font-family: "Malgun Gothic", "Noto Sans KR", sans-serif; }
+    .canvas { position: relative; width: 1200px; height: 760px; margin: 0 auto; overflow: hidden; background: #fff; }
+    h1 { position: absolute; left: 48px; top: 28px; margin: 0; font-size: 30px; color: #152635; }
+    .subtitle { position: absolute; left: 50px; top: 76px; color: #607281; font-size: 17px; }
+    .board { position: absolute; left: 180px; top: 145px; transform: scale(1.2); transform-origin: top left; filter: drop-shadow(0 5px 8px #0003); }
+    .sensor { position: absolute; left: 907.5px; top: 321.875px; transform: scale(1.25) rotate(180deg); transform-origin: top left; filter: drop-shadow(0 5px 8px #0003); }
+    .wire-layer { position: absolute; inset: 0; width: 1200px; height: 760px; pointer-events: none; }
+    .wire { fill: none; stroke-width: 8; stroke-linejoin: round; stroke-linecap: round; }
+    .blue { stroke: #315DAB; }
+    .red { stroke: #e31c23; }
+    .black { stroke: #151515; }
+    .yellow { stroke: #f2cc0c; filter: drop-shadow(0 0 1px #725f00); }
+    .joint { stroke: #fff; stroke-width: 2; }
+    .label { position: absolute; padding: 7px 12px; border-radius: 9px; color: #fff; font-weight: 700; font-size: 16px; box-shadow: 0 2px 5px #0003; }
+    .label.red { background: #d71920; }
+    .label.black { background: #161616; }
+    .label.yellow { background: #315DAB; color: #fff; }
+    .vcc { left: 330px; top: 397px; }
+    .gnd { left: 420px; top: 420px; }
+    .a0 { left: 590px; top: 128px; }
+    .module-title { position: absolute; left: 690px; top: 208px; color: #253847; font-size: 20px; font-weight: 700; }
+    .unused { position: absolute; left: 935px; top: 264px; padding: 5px 9px; border: 2px dashed #99a6af; border-radius: 8px; background: #fff; color: #657680; font-size: 14px; font-weight: 700; }
+    .pin-guide { position: absolute; left: 687px; top: 328px; padding: 10px 14px; border: 2px solid #d9e2e8; border-radius: 10px; background: #fff; color: #354956; font-size: 15px; line-height: 1.6; }
+    .pin-guide strong { color: #192c3a; }
+    .note { position: absolute; left: 50px; right: 50px; bottom: 33px; height: 88px; border-radius: 14px; background: #f1f7fb; border: 2px solid #d5e3ec; display: flex; align-items: center; justify-content: center; gap: 34px; font-size: 18px; color: #253847; }
+    .swatch { display: inline-block; width: 34px; height: 7px; border-radius: 5px; margin-right: 9px; vertical-align: middle; }
+  </style>
+</head>
+<body>
+  <main class="canvas" aria-label="Arduino UNO 모듈형 CDS 센서 DO 회로도">
+    <h1>Arduino UNO + 모듈형 CDS 센서</h1>
+    <div class="subtitle">디지털 출력 사용: CDS의 DO 핀을 Arduino D2에 연결</div>
+
+    <wokwi-arduino-uno class="board"></wokwi-arduino-uno>
+    <wokwi-photoresistor-sensor class="sensor" lux="500"></wokwi-photoresistor-sensor>
+    <div class="module-title">CDS 센서 모듈</div>
+
+    <svg class="wire-layer" viewBox="0 0 1200 760" aria-hidden="true">
+      <!-- UNO 5V=(372,374.8), GND.2=(383.4,374.8), A0=(429.6,374.8) -->
+      <!-- Rotated sensor: VCC=(692.5,301.875), GND=(692.5,289.375), DO=(692.5,277.125), AO=(692.5,265) -->
+      <path class="wire red" d="M372 374.8 V430 H620 V301.875 H692.5" />
+      <path class="wire black" d="M383.4 374.8 V450 H640 V289.375 H692.5" />
+      <path class="wire blue" d="M463.8 155.8 V115 H600 V277.125 H692.5" />
+
+      <circle class="joint" cx="372" cy="374.8" r="5" fill="#e31c23" />
+      <circle class="joint" cx="383.4" cy="374.8" r="5" fill="#151515" />
+      <circle cx="463.8" cy="155.8" r="5" fill="#315DAB" stroke="#fff" stroke-width="2" />
+      <circle class="joint" cx="692.5" cy="301.875" r="5" fill="#e31c23" />
+      <circle class="joint" cx="692.5" cy="289.375" r="5" fill="#151515" />
+      <circle cx="692.5" cy="277.125" r="5" fill="#315DAB" stroke="#fff" stroke-width="2" />
+      <circle cx="692.5" cy="265" r="5" fill="#aab4bb" stroke="#fff" stroke-width="2" />
+    </svg>
+
+    <div class="label red vcc">5V → VCC</div>
+    <div class="label black gnd">GND</div>
+    <div class="label yellow a0">D2 → DO</div>
+    <div class="unused">AO 미사용</div>
+    <div class="pin-guide"><strong>모듈 핀 순서</strong><br>화면 위부터 AO · DO · GND · VCC<br><strong>이번 회로:</strong> DO만 측정</div>
+
+    <div class="note">
+      <span><i class="swatch" style="background:#e31c23"></i>빨강: 5V → VCC</span>
+      <span><i class="swatch" style="background:#151515"></i>검정: GND → GND</span>
+      <span><i class="swatch" style="background:#315DAB"></i>파랑: D2 → DO</span>
+      <strong>AO 핀은 연결하지 않음</strong>
+    </div>
+  </main>
+</body>
+</html>
