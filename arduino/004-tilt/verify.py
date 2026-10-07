@@ -6,7 +6,8 @@ from pathlib import Path
 
 p = Path(__file__).parent
 d = json.loads((p / 'diagram.json').read_text(encoding='utf8'))
-e = json.loads((p / 'episode.json').read_text(encoding='utf8'))
+readme = (p / 'README.md').read_text(encoding='utf8')
+caption = (p / 'caption.md').read_text(encoding='utf8')
 code = (p / 'sketch.ino').read_text(encoding='utf8')
 parts = {part['id']: part for part in d['parts']}
 assert len(parts) == 2 and len(d['connections']) == 2
@@ -28,8 +29,8 @@ for a, b, _, points in d['connections']:
 assert re.search(r'TILT_PIN\s*=\s*2', code)
 assert 'pinMode(TILT_PIN, INPUT_PULLUP)' in code
 assert 'stableState == LOW ? HIGH : LOW' in code
-assert e['cards'][3]['rows'][1][:2] == ['D2', '한쪽 다리']
-assert e['cards'][3]['rows'][2][:2] == ['GND', '다른 다리']
-assert e['caption'].count(e['repository']) == 1
+assert '| D2 | 한쪽 다리 |' in readme
+assert '| GND | 다른 다리 |' in readme
+assert caption.count('https://github.com/CodeplantEDU/codeplant-tech/tree/main/arduino/004-tilt') == 1
 assert (p / 'sketch.ino').is_file()
 print('PASS: two-pin contact net, source SVG pin endpoints, preview routes, D2 code/table, caption URL')
