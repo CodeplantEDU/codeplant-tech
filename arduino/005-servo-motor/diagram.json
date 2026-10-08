@@ -1,0 +1,85 @@
+{
+  "version": 1,
+  "author": "Codex - wokwi-circuit-builder",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-uno",
+      "id": "uno",
+      "top": -20,
+      "left": 40,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "servo1",
+      "top": 485,
+      "left": 390,
+      "attrs": {
+        "horn": "single",
+        "hornColor": "#eeeeee"
+      }
+    },
+    {
+      "type": "wokwi-vcc",
+      "id": "ext5v",
+      "top": 330,
+      "left": -120,
+      "attrs": {
+        "voltage": 5
+      }
+    },
+    {
+      "type": "wokwi-gnd",
+      "id": "extgnd",
+      "top": 420,
+      "left": -120,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-text",
+      "id": "powerLabel",
+      "top": 270,
+      "left": -165,
+      "attrs": {
+        "text": "외부 5V 전원"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "wireLabel",
+      "top": 565,
+      "left": 25,
+      "attrs": {
+        "text": "빨강: +5V   검정: 공통 GND   노랑: 신호 D9"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "ext5v:VCC",
+      "servo1:V+",
+      "red",
+      []
+    ],
+    [
+      "extgnd:GND",
+      "servo1:GND",
+      "black",
+      []
+    ],
+    [
+      "uno:GND.2",
+      "servo1:GND",
+      "black",
+      []
+    ],
+    [
+      "servo1:PWM",
+      "uno:9",
+      "yellow",
+      []
+    ]
+  ],
+  "dependencies": {}
+}

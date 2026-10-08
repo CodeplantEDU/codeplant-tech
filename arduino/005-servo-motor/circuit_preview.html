@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Arduino UNO + 외부 5V 서보모터 회로</title>
+  <script type="module" src="https://unpkg.com/@wokwi/elements@1.9.2/dist/wokwi-elements.bundle.js"></script>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: 100%; height: 100%; background: #eef3f7; font-family: "Malgun Gothic", "Noto Sans KR", sans-serif; }
+    .canvas { position: relative; width: 1200px; height: 760px; margin: 0 auto; overflow: hidden; background: #fff; }
+    h1 { position: absolute; left: 48px; top: 28px; margin: 0; font-size: 30px; color: #152635; }
+    .subtitle { position: absolute; left: 50px; top: 76px; color: #607281; font-size: 17px; }
+    .board { position: absolute; left: 355px; top: 145px; transform: scale(1.15); transform-origin: top left; filter: drop-shadow(0 5px 8px #0003); }
+    .servo { position: absolute; left: 885px; top: 430px; transform: scale(1.55); transform-origin: top left; filter: drop-shadow(0 5px 8px #0003); }
+    .supply { position: absolute; left: 75px; top: 395px; width: 210px; height: 150px; border: 4px solid #2e3b45; border-radius: 18px; background: #f1f5f8; box-shadow: 0 5px 10px #0002; text-align: center; }
+    .supply strong { display: block; margin-top: 23px; font-size: 27px; color: #22323f; }
+    .supply span { display:block; margin-top:8px; color:#566975; font-size:17px; }
+    .terminal { position:absolute; right:-15px; width:22px; height:22px; border-radius:50%; border:3px solid #fff; box-shadow:0 0 0 2px #555; }
+    .plus { top:92px; background:#e21b23; }
+    .minus { top:38px; background:#111; }
+    .wire-layer { position:absolute; inset:0; width:1200px; height:760px; pointer-events:none; }
+    .wire { fill:none; stroke-width:8; stroke-linejoin:round; stroke-linecap:round; }
+    .red { stroke:#e31c23; }
+    .black { stroke:#151515; }
+    .yellow { stroke:#f2cc0c; filter:drop-shadow(0 0 1px #725f00); }
+    .joint { stroke:#fff; stroke-width:3; }
+    .label { position:absolute; padding:7px 12px; border-radius:9px; color:#fff; font-weight:700; font-size:17px; box-shadow:0 2px 5px #0003; }
+    .label.red { background:#d71920; }
+    .label.black { background:#161616; }
+    .label.yellow { background:#e9bf00; color:#2d2600; }
+    .d9 { left:600px; top:94px; }
+    .gnd { left:562px; top:390px; }
+    .pin-order { position:absolute; left:895px; top:288px; width:215px; padding:9px 10px; border:2px solid #d9e2e8; border-radius:10px; background:#fff; color:#354956; font-size:14px; font-weight:700; line-height:1.65; text-align:left; }
+    .pin-order .g { color:#111; }
+    .pin-order .v { color:#d71920; }
+    .pin-order .p { color:#927700; }
+    .servo-name { position:absolute; left:870px; top:584px; color:#273947; font-weight:700; font-size:20px; }
+    .note { position:absolute; left:50px; right:50px; bottom:33px; height:82px; border-radius:14px; background:#f1f7fb; border:2px solid #d5e3ec; display:grid; grid-template-columns:repeat(3,1fr); align-items:center; text-align:center; gap:4px; font-size:18px; color:#253847; }
+    .note strong { grid-column:1 / -1; }
+    .swatch { display:inline-block; width:34px; height:7px; border-radius:5px; margin-right:9px; vertical-align:middle; }
+    .warning { position:absolute; left:50px; top:112px; color:#b23a30; font-size:16px; font-weight:700; }
+  </style>
+</head>
+<body>
+  <main class="canvas" aria-label="Arduino UNO 외부 5V 서보모터 회로도">
+    <h1>Arduino UNO + 서보모터 (외부 5V 전원)</h1>
+    <div class="subtitle">UNO는 USB로 전원 공급 · 서보는 외부 정전압 5V 전원으로 공급</div>
+    <div class="warning">전원을 끈 채 연결 · 실제 케이블 색과 커넥터 방향은 제품 핀표로 확인</div>
+
+    <wokwi-arduino-uno class="board"></wokwi-arduino-uno>
+    <wokwi-servo class="servo" horn="single"></wokwi-servo>
+
+    <section class="supply" aria-label="외부 5볼트 전원">
+      <strong>외부 5V 전원</strong><span>정전압 · 2A 이상 권장</span>
+      <i class="terminal plus"></i><i class="terminal minus"></i>
+    </section>
+
+    <svg class="wire-layer" viewBox="0 0 1200 760" aria-hidden="true">
+      <!-- 외부 +5V에서 서보 V+ -->
+      <path class="wire red" d="M285 502 V560 H800 V522.225 H885" />
+      <!-- 외부 GND에서 서보 GND -->
+      <path class="wire black" d="M285 448 H760 V507.5 H885" />
+      <!-- Arduino GND를 외부 GND에 합쳐 공통접지 -->
+      <path class="wire black" d="M549.925 365.225 V448 H760" />
+      <!-- Arduino D9에서 서보 PWM -->
+      <path class="wire yellow" d="M542.45 155.35 V138 H840 V405 H1180 V620 H840 V536.95 H885" />
+      <circle class="joint" cx="549.925" cy="448" r="8" fill="#151515" />
+      <!-- 핀 중심 표시: UNO D9, UNO GND.2, Servo GND/V+/PWM -->
+      <circle cx="542.45" cy="155.35" r="5" fill="#f2cc0c" stroke="#6f5d00" stroke-width="2" />
+      <circle cx="549.925" cy="365.225" r="5" fill="#151515" stroke="#fff" stroke-width="2" />
+      <circle cx="885" cy="507.5" r="5" fill="#151515" stroke="#fff" stroke-width="2" />
+      <circle cx="885" cy="522.225" r="5" fill="#e31c23" stroke="#fff" stroke-width="2" />
+      <circle cx="885" cy="536.95" r="5" fill="#f2cc0c" stroke="#6f5d00" stroke-width="2" />
+    </svg>
+
+    <div class="label yellow d9">D9 신호</div>
+    <div class="label black gnd">GND</div>
+    <div class="pin-order"><span class="g">위: GND</span><br><span class="v">가운데: +5V</span><br><span class="p">아래: 신호</span></div>
+    <div class="servo-name">서보모터 · 부품 도형</div>
+
+    <div class="note">
+      <span><i class="swatch" style="background:#e31c23"></i>빨강: 서보 +5V</span>
+      <span><i class="swatch" style="background:#151515"></i>검정: 공통 GND</span>
+      <span><i class="swatch" style="background:#f2cc0c"></i>노랑: D9 신호</span>
+      <strong>Arduino 5V 핀에는 외부 +5V를 연결하지 않음</strong>
+    </div>
+  </main>
+</body>
+</html>
