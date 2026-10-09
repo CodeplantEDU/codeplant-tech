@@ -10,6 +10,8 @@ Arduino IDE에서 전체 코드를 업로드하고 시리얼 모니터를 9600 b
 
 전체 코드와 연결 방법: https://github.com/CodeplantEDU/codeplant-tech/tree/main/arduino/004-tilt
 
+실제 보드·센서 동작은 미시험입니다.
+
 사진: SparkFun Electronics(CC BY 2.0), lady ada / Adafruit(CC BY-SA 3.0, 원본 사진 표시 크기만 조절). 회로 부품 도형: Wokwi, Fritzing(Lionel Michel). 사진·회로의 출처와 사용 조건은 저장소 README를 확인하세요.
 
-#코드플랜트 #CODEPLANT #아두이노 #Arduino #디지털센서 #기울기센서 #기울기스위치 #코딩교육
+#코드플랜트 #아두이노 #기울기센서 #디지털센서 #코딩교육
