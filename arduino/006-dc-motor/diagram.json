@@ -1,0 +1,130 @@
+{
+  "version": 1,
+  "author": "CODEPLANT",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-uno",
+      "id": "uno",
+      "top": 430,
+      "left": 700,
+      "attrs": {}
+    },
+    {
+      "type": "custom-l298n-photo",
+      "id": "driver",
+      "top": 60,
+      "left": 100,
+      "attrs": {
+        "5V-EN": "removed",
+        "ENA-jumper": "removed",
+        "ENB-jumper": "removed",
+        "IN3": "GND",
+        "IN4": "GND"
+      }
+    },
+    {
+      "type": "custom-tt-motor-symbol",
+      "id": "motor",
+      "top": 460,
+      "left": 70,
+      "attrs": {
+        "model": "Adafruit #3777",
+        "ratedVoltage": "3-6V"
+      }
+    },
+    {
+      "type": "wokwi-vcc",
+      "id": "ext6v",
+      "top": 560,
+      "left": 270,
+      "attrs": {
+        "voltage": 6
+      }
+    },
+    {
+      "type": "wokwi-gnd",
+      "id": "extgnd",
+      "top": 615,
+      "left": 270,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [
+      "uno:9",
+      "driver:ENA",
+      "yellow",
+      []
+    ],
+    [
+      "uno:8",
+      "driver:IN1",
+      "blue",
+      []
+    ],
+    [
+      "uno:7",
+      "driver:IN2",
+      "green",
+      []
+    ],
+    [
+      "uno:5V",
+      "driver:5V",
+      "red",
+      []
+    ],
+    [
+      "uno:GND.2",
+      "driver:GND",
+      "black",
+      []
+    ],
+    [
+      "ext6v:VCC",
+      "driver:12V",
+      "red",
+      []
+    ],
+    [
+      "extgnd:GND",
+      "driver:GND",
+      "black",
+      []
+    ],
+    [
+      "driver:OUT1",
+      "motor:1",
+      "orange",
+      []
+    ],
+    [
+      "driver:OUT2",
+      "motor:2",
+      "purple",
+      []
+    ],
+    [
+      "driver:ENB",
+      "driver:GND",
+      "black",
+      []
+    ],
+    [
+      "driver:IN3",
+      "driver:GND",
+      "black",
+      []
+    ],
+    [
+      "driver:IN4",
+      "driver:GND",
+      "black",
+      []
+    ]
+  ],
+  "dependencies": {},
+  "simulationSupported": false,
+  "note": "Local editable wiring netlist; custom photo/symbol parts are not stock Wokwi simulation components. Unused B inputs tied to GND with ENB jumper removed."
+}
