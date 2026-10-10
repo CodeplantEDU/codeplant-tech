@@ -1,0 +1,80 @@
+{
+  "version": 1,
+  "author": "CODEPLANT",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "id": "uno",
+      "type": "wokwi-arduino-uno",
+      "left": 70,
+      "top": 200,
+      "scale": 1.5,
+      "attrs": {},
+      "pins": {
+        "GND.1": [
+          115.5,
+          9
+        ],
+        "5V": [
+          160,
+          191.5
+        ],
+        "A0": [
+          208,
+          191.5
+        ]
+      }
+    },
+    {
+      "id": "pot",
+      "type": "wokwi-potentiometer",
+      "left": 810,
+      "top": 230,
+      "scale": 3.5,
+      "attrs": {
+        "value": "512"
+      },
+      "pins": {
+        "GND": [
+          29,
+          68.5
+        ],
+        "SIG": [
+          39,
+          68.5
+        ],
+        "VCC": [
+          49,
+          68.5
+        ]
+      }
+    }
+  ],
+  "connections": [
+    [
+      "uno:5V",
+      "pot:VCC",
+      "red",
+      []
+    ],
+    [
+      "uno:GND.1",
+      "pot:GND",
+      "black",
+      []
+    ],
+    [
+      "uno:A0",
+      "pot:SIG",
+      "yellow",
+      []
+    ]
+  ],
+  "dependencies": {},
+  "note": "Stock Wokwi parts and three nets. scale/pins/previewRoutes are local preview metadata. Wokwi blue component is an illustrative potentiometer, not a photo of the bare Adafruit part. No simulation run claimed.",
+  "previewRoutes": {
+    "uno:5V": "M310 487.25 V630 H981.5 V469.75",
+    "uno:GND.1": "M243.25 213.5 V130 H730 V510 H911.5 V469.75",
+    "uno:A0": "M382 487.25 V590 H946.5 V469.75"
+  }
+}
