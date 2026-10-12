@@ -1,0 +1,95 @@
+{
+  "version": 1,
+  "author": "CODEPLANT",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "id": "uno",
+      "type": "wokwi-arduino-uno",
+      "left": 70,
+      "top": 270,
+      "scale": 1.5,
+      "attrs": {},
+      "pins": {
+        "9": [
+          163,
+          9
+        ],
+        "10": [
+          153.5,
+          9
+        ],
+        "5V": [
+          160,
+          191.5
+        ],
+        "GND.1": [
+          115.5,
+          9
+        ]
+      }
+    },
+    {
+      "id": "sonar",
+      "type": "wokwi-hc-sr04",
+      "left": 700,
+      "top": 260,
+      "scale": 2,
+      "attrs": {
+        "distance": "100"
+      },
+      "pins": {
+        "VCC": [
+          71.3,
+          94.5
+        ],
+        "TRIG": [
+          81.3,
+          94.5
+        ],
+        "ECHO": [
+          91.3,
+          94.5
+        ],
+        "GND": [
+          101.3,
+          94.5
+        ]
+      }
+    }
+  ],
+  "connections": [
+    [
+      "uno:5V",
+      "sonar:VCC",
+      "red",
+      []
+    ],
+    [
+      "uno:GND.1",
+      "sonar:GND",
+      "black",
+      []
+    ],
+    [
+      "uno:9",
+      "sonar:TRIG",
+      "yellow",
+      []
+    ],
+    [
+      "uno:10",
+      "sonar:ECHO",
+      "yellow",
+      []
+    ]
+  ],
+  "dependencies": {},
+  "note": "Classic 5V HC-SR04 + 5V-logic UNO R3. Two yellow signal nets are separate. No divider needed for this UNO configuration; do not reuse on 3.3V boards. scale/pins/previewRoutes are local drawing metadata. No physical or Wokwi simulation test claimed.",
+  "previewRoutes": {
+    "uno:5V": "M310 557.25 V650 H842.6 V449",
+    "uno:GND.1": "M243.25 283.5 V80 H1150 V610 H902.6 V449",
+    "uno:9": "M314.5 283.5 V150 H620 V500 H832.6 Q842.6 485 852.6 500 H862.6 V449",
+    "uno:10": "M300.25 283.5 V110 H1080 V560 H912.6 Q902.6 545 892.6 560 H882.6 V449"
+  }
+}

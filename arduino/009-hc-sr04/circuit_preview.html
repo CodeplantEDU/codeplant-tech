@@ -1,0 +1,21 @@
+<!doctype html><html lang="ko"><meta charset="utf-8"><title>UNO R3 + HC-SR04 배선</title><script type="module" src="https://unpkg.com/@wokwi/elements@1.9.2/dist/wokwi-elements.bundle.js"></script>
+<style>@font-face{font-family:Pretendard;src:url('/assets/Pretendard-Regular.ttf')}*{box-sizing:border-box}body{margin:0;font-family:Pretendard,"Malgun Gothic",sans-serif}.canvas{position:relative;width:1200px;height:760px;overflow:hidden;background:white}h1{position:absolute;left:45px;top:23px;margin:0;font-size:30px;color:#315DAB}.board{position:absolute;left:70px;top:270px;transform:scale(1.5);transform-origin:top left}.sensor{position:absolute;left:700px;top:260px;transform:scale(2);transform-origin:top left}.wires{position:absolute;inset:0;width:1200px;height:760px;pointer-events:none}.wire{fill:none;stroke-width:6;stroke-linejoin:round;stroke-linecap:round}.label{position:absolute;font-size:23px;padding:6px 10px;background:#fff;border:1px solid #d5dfed;border-radius:6px;line-height:1.4}.note{position:absolute;left:45px;right:45px;bottom:27px;font-size:22px;line-height:1.4;color:#253847}.source{position:absolute;left:45px;bottom:5px;font-size:13px;color:#607281}</style>
+<main class="canvas" aria-label="UNO 5V 위쪽 GND D9 D10을 HC-SR04 VCC GND TRIG ECHO에 연결"><h1>Arduino UNO R3 + HC-SR04 (5V 모듈)</h1>
+<wokwi-arduino-uno class="board"></wokwi-arduino-uno><wokwi-hc-sr04 class="sensor"></wokwi-hc-sr04>
+<svg class="wires" viewBox="0 0 1200 760"><path data-net="uno:5V" class="wire" stroke="#e31c23" d="M310 557.25 V650 H842.6 V449"/>
+<path data-net="uno:GND.1" class="wire" stroke="#151515" d="M243.25 283.5 V80 H1150 V610 H902.6 V449"/>
+<path data-net="uno:9" class="wire" stroke="#e7c500" d="M314.5 283.5 V150 H620 V500 H832.6 Q842.6 485 852.6 500 H862.6 V449"/>
+<path data-net="uno:10" class="wire" stroke="#e7c500" d="M300.25 283.5 V110 H1080 V560 H912.6 Q902.6 545 892.6 560 H882.6 V449"/>
+<path d="M832.6 500 Q842.6 485 852.6 500" fill="none" stroke="white" stroke-width="14"/><path d="M832.6 500 Q842.6 485 852.6 500" fill="none" stroke="#e7c500" stroke-width="6"/>
+<path d="M912.6 560 Q902.6 545 892.6 560" fill="none" stroke="white" stroke-width="14"/><path d="M912.6 560 Q902.6 545 892.6 560" fill="none" stroke="#e7c500" stroke-width="6"/>
+<circle cx="310" cy="557.25" r="4" fill="#e31c23" stroke="white" stroke-width="1"/>
+<circle cx="842.6" cy="449" r="4" fill="#e31c23" stroke="white" stroke-width="1"/>
+<circle cx="243.25" cy="283.5" r="4" fill="#151515" stroke="white" stroke-width="1"/>
+<circle cx="902.6" cy="449" r="4" fill="#151515" stroke="white" stroke-width="1"/>
+<circle cx="314.5" cy="283.5" r="4" fill="#e7c500" stroke="white" stroke-width="1"/>
+<circle cx="862.6" cy="449" r="4" fill="#e7c500" stroke="white" stroke-width="1"/>
+<circle cx="300.25" cy="283.5" r="4" fill="#e7c500" stroke="white" stroke-width="1"/>
+<circle cx="882.6" cy="449" r="4" fill="#e7c500" stroke="white" stroke-width="1"/></svg>
+<div class="label" style="left:75px;top:190px">위쪽 GND</div><div class="label" style="left:390px;top:190px">D9 → Trig (출력)</div><div class="label" style="left:735px;top:165px">D10 ← Echo (입력)</div>
+<div class="label" style="left:695px;top:215px">센서 앞면 · 다리는 아래로</div><div class="label" style="left:75px;top:600px;color:#b72727">5V → VCC</div>
+<div class="note">USB를 빼고 연결 · 센서 왼쪽부터 VCC / Trig / Echo / GND<br>노랑 두 선은 따로 연결 · 둥글게 건너는 선끼리는 연결되지 않음</div><div class="source">부품 도형: Wokwi 공식 부품 · 이 5V Echo 직결 회로는 UNO R3용이며 3.3V 보드용이 아닙니다.</div></main></html>
