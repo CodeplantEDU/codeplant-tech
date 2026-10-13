@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "author": "CODEPLANT",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "id": "uno",
+      "type": "wokwi-arduino-uno",
+      "left": 70,
+      "top": 270,
+      "scale": 1.5,
+      "attrs": {},
+      "pins": {
+        "2": [
+          236.5,
+          9
+        ],
+        "5V": [
+          160,
+          191.5
+        ],
+        "GND.1": [
+          115.5,
+          9
+        ]
+      }
+    },
+    {
+      "id": "pir",
+      "type": "wokwi-pir-motion-sensor",
+      "left": 740,
+      "top": 280,
+      "scale": 2.5,
+      "attrs": {
+        "delayTime": "5",
+        "inhibitTime": "8",
+        "retrigger": "1"
+      },
+      "pins": {
+        "VCC": [
+          36.178,
+          92
+        ],
+        "OUT": [
+          45.9175,
+          92
+        ],
+        "GND": [
+          55.6415,
+          92
+        ]
+      }
+    }
+  ],
+  "connections": [
+    [
+      "uno:5V",
+      "pir:VCC",
+      "red",
+      []
+    ],
+    [
+      "uno:GND.1",
+      "pir:GND",
+      "black",
+      []
+    ],
+    [
+      "uno:2",
+      "pir:OUT",
+      "yellow",
+      []
+    ]
+  ],
+  "dependencies": {},
+  "previewRoutes": {
+    "uno:5V": "M310 557.25 V640 H830.445 V510",
+    "uno:GND.1": "M243.25 283.5 V90 H1080 V600 H879.10375 V510",
+    "uno:2": "M424.75 283.5 V170 H650 V550 H820.445 Q830.445 535 840.445 550 H854.79375 V510"
+  },
+  "note": "HC-SR501 5V power, OUT digital input to D2, common GND; use printed pin labels. Wokwi illustration, not actual product photo. scale/pins/previewRoutes are local drawing metadata. No physical or simulation test claimed."
+}

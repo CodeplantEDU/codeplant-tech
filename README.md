@@ -13,5 +13,6 @@ Arduino UNO, ESP32 MicroPython, Raspberry Pi Pico 예제를 한 저장소에서 
 | arduino | 07 · 손으로 값을 바꾸는 가변저항 | [예제 보기](arduino/007-potentiometer/) |
 | arduino | 08 · 온도와 습도를 읽는 DHT22 | [예제 보기](arduino/008-dht22/) |
 | arduino | 09 · 초음파로 거리를 재는 HC-SR04 | [예제 보기](arduino/009-hc-sr04/) |
+| arduino | 10 · 움직임을 감지하는 PIR 센서 | [예제 보기](arduino/010-pir/) |
 
 제작 순서: 기본 세팅 → 신호처리 → 아날로그센서 → 디지털센서 → 서보모터 → DC모터 → 기타 센서류. 실습별 검증 범위와 자료 출처는 각 폴더의 README를 확인하세요.
