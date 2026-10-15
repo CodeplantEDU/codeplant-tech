@@ -1,0 +1,116 @@
+{
+  "version": 1,
+  "author": "CODEPLANT",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "id": "uno",
+      "type": "wokwi-arduino-uno",
+      "left": 70,
+      "top": 270,
+      "scale": 1.5,
+      "attrs": {},
+      "pins": {
+        "2": [
+          236.5,
+          9
+        ],
+        "5V": [
+          160,
+          191.5
+        ],
+        "GND.1": [
+          115.5,
+          9
+        ]
+      }
+    },
+    {
+      "id": "temp",
+      "type": "wokwi-ds18b20",
+      "left": 900,
+      "top": 200,
+      "scale": 20,
+      "attrs": {
+        "temperature": "22"
+      },
+      "pins": {
+        "GND": [
+          1.46,
+          13
+        ],
+        "DQ": [
+          4,
+          13
+        ],
+        "VCC": [
+          6.54,
+          13
+        ]
+      },
+      "source": "https://github.com/wokwi/wokwi-boards/blob/main/boards/ds18b20/board.json"
+    },
+    {
+      "id": "r1",
+      "type": "wokwi-resistor",
+      "left": 780,
+      "top": 540,
+      "scale": 1.5,
+      "rotate": 90,
+      "attrs": {
+        "value": "4700"
+      },
+      "pins": {
+        "1": [
+          0,
+          5.65
+        ],
+        "2": [
+          58.8,
+          5.65
+        ]
+      }
+    }
+  ],
+  "connections": [
+    [
+      "uno:5V",
+      "temp:VCC",
+      "red",
+      []
+    ],
+    [
+      "uno:GND.1",
+      "temp:GND",
+      "black",
+      []
+    ],
+    [
+      "uno:2",
+      "temp:DQ",
+      "yellow",
+      []
+    ],
+    [
+      "r1:1",
+      "temp:DQ",
+      "yellow",
+      []
+    ],
+    [
+      "r1:2",
+      "temp:VCC",
+      "red",
+      []
+    ]
+  ],
+  "dependencies": {},
+  "previewRoutes": {
+    "uno:5V": "M310 557.25 V670 H1030.8 V460",
+    "uno:GND.1": "M243.25 283.5 V90 H850 V480 H929.2 V460",
+    "uno:2": "M424.75 283.5 V140 H740 V510 H980 V460",
+    "r1:1": "M771.525 540 V510 H980 V460",
+    "r1:2": "M771.525 628.2 V670 H1030.8 V460"
+  },
+  "note": "TO-92 flat face forward, pins downward: GND/DQ/VDD. Wokwi VCC pin name maps to physical VDD. 4.7k pull-up DQ to 5V, external power. pins/scale/previewRoutes are editor metadata; no hardware/simulation execution claimed."
+}

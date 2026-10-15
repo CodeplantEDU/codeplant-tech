@@ -1,0 +1,22 @@
+<!doctype html><html lang="ko"><meta charset="utf-8"><title>UNO R3 + DS18B20 배선</title><script type="module" src="https://unpkg.com/@wokwi/elements@1.9.2/dist/wokwi-elements.bundle.js"></script>
+<style>@font-face{font-family:Pretendard;src:url('/assets/Pretendard-Regular.ttf')}*{box-sizing:border-box}body{margin:0;font-family:Pretendard,'Malgun Gothic',sans-serif}.canvas{position:relative;width:1200px;height:760px;background:white;overflow:hidden}h1{position:absolute;left:45px;top:23px;margin:0;font-size:31px;color:#315DAB}.board{position:absolute;left:70px;top:270px;transform:scale(1.5);transform-origin:top left}.sensor{position:absolute;left:900px;top:200px;width:171.28px;height:267.76px}.resistor{position:absolute;left:780px;top:540px;transform:rotate(90deg) scale(1.5);transform-origin:top left}.wires{position:absolute;inset:0;width:1200px;height:760px;pointer-events:none}.wire{fill:none;stroke-width:6;stroke-linecap:round;stroke-linejoin:round}.label{position:absolute;font-size:23px;line-height:1.4;padding:6px 10px;border:1px solid #d5dfed;border-radius:6px;background:white}.note{position:absolute;left:45px;bottom:30px;font-size:22px;color:#315DAB}.source{position:absolute;left:45px;bottom:7px;font-size:14px;color:#607281}</style>
+<main class="canvas" aria-label="DS18B20 1 GND 2 DQ 3 VDD, UNO 위쪽GND D2 5V와 4.7k 풀업">
+<h1>Arduino UNO R3 + DS18B20 (TO-92)</h1>
+<wokwi-arduino-uno class="board"></wokwi-arduino-uno><wokwi-resistor class="resistor" value="4700"></wokwi-resistor>
+<svg class="sensor" viewBox="0 0 8.564 13.388" aria-label="Wokwi 공식 DS18B20 앞면"><g transform="translate(-71.965 -103.44)">
+  <rect x="71.965" y="103.44" width="8.564" height="8.2188" rx="1"/>
+  <g fill="#b3b3b3">
+   <rect x="72.988" y="111.64" width="1.1049" height="5.187"/>
+   <rect x="78.068" y="111.64" width="1.1049" height="5.1781"/>
+   <rect x="75.528" y="111.64" width="1.1049" height="5.1683"/>
+  </g>
+  <text x="76.150513" y="107.08003" fill="#ffffff" font-family="sans-serif" font-size="2.4716px" stroke-width=".06179" text-anchor="middle" style="line-height:1.25" xml:space="preserve"><tspan x="76.150513" y="107.08003" text-align="center">DS</tspan><tspan x="76.150513" y="110.16953" text-align="center">18B20</tspan></text>
+ </g>
+</svg>
+<svg class="wires" viewBox="0 0 1200 760"><path data-net="uno:5V" class="wire" stroke="#e31c23" d="M310 557.25 V670 H1030.8 V460"/><path data-net="uno:GND.1" class="wire" stroke="#151515" d="M243.25 283.5 V90 H850 V480 H929.2 V460"/><path data-net="uno:2" class="wire" stroke="#e7c500" d="M424.75 283.5 V140 H740 V510 H980 V460"/><path data-net="r1:1" class="wire" stroke="#e7c500" d="M771.525 540 V510 H980 V460"/><path data-net="r1:2" class="wire" stroke="#e31c23" d="M771.525 628.2 V670 H1030.8 V460"/><circle cx="310" cy="557.25" r="4" fill="#e31c23" stroke="white"/><circle cx="1030.8" cy="460" r="4" fill="#e31c23" stroke="white"/><circle cx="243.25" cy="283.5" r="4" fill="#151515" stroke="white"/><circle cx="929.2" cy="460" r="4" fill="#151515" stroke="white"/><circle cx="424.75" cy="283.5" r="4" fill="#e7c500" stroke="white"/><circle cx="980" cy="460" r="4" fill="#e7c500" stroke="white"/><circle cx="771.525" cy="540" r="4" fill="#e7c500" stroke="white"/><circle cx="980" cy="460" r="4" fill="#e7c500" stroke="white"/><circle cx="771.525" cy="628.2" r="4" fill="#e31c23" stroke="white"/><circle cx="1030.8" cy="460" r="4" fill="#e31c23" stroke="white"/><circle cx="771.525" cy="510" r="5" fill="#151515"/><circle cx="771.525" cy="670" r="5" fill="#151515"/></svg>
+<div class="label" style="left:110px;top:185px">위쪽 GND → 1번</div><div class="label" style="left:405px;top:185px">D2 ↔ 2번 DQ</div>
+<div class="label" style="left:875px;top:140px">글씨 있는 평평한 앞면</div><div class="label" style="left:550px;top:560px">4.7kΩ 풀업<br>DQ ↔ 5V</div>
+<div class="label" style="left:355px;top:600px;color:#b72727">5V → 3번 VDD</div>
+<div class="note">USB를 빼고 배선 · 앞면에서 왼쪽부터 1 GND / 2 DQ / 3 VDD · 검은 점은 접점</div>
+<div class="source">도형·핀 위치: Wokwi 공식 UNO / resistor / ds18b20 board.json. 실제 제품 사진은 표지 참고.</div>
+</main></html>
