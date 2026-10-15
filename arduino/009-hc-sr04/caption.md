@@ -8,7 +8,7 @@ USB를 빼고 연결하세요. 센서 앞면에서 왼쪽부터 VCC → UNO 5V, 
 
 Arduino IDE에서 전체 코드를 업로드하고 시리얼 모니터를 9600 baud로 엽니다. 추가 라이브러리는 필요 없습니다. Trig HIGH 10μs → Echo HIGH 시간 읽기 → 시간÷58로 cm 환산 → 다음 회차 전 100ms 대기 순서입니다.
 
-distance_cm=숫자를 벽이나 큰 평평한 판까지 자로 잰 거리와 비교하세요. NO_ECHO는 제한 시간 안에 펄스를 읽지 못한 상태이며 0cm가 아닙니다. OUT_OF_RANGE는 계산 결과가 2~400cm 밖이라는 안내입니다. 실제 거리·오차와 하드웨어 동작은 미시험입니다.
+distance_cm=숫자를 벽이나 큰 평평한 판까지 자로 잰 거리와 비교하세요. NO_ECHO는 제한 시간 안에 펄스를 읽지 못한 상태이며 0cm가 아닙니다. OUT_OF_RANGE는 계산 결과가 2~400cm 밖이라는 안내입니다.
 
 전체 코드와 연결 방법: https://github.com/CodeplantEDU/codeplant-tech/tree/main/arduino/009-hc-sr04
 유튜브: https://www.youtube.com/@codeplant2024
