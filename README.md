@@ -16,5 +16,6 @@ Arduino UNO, ESP32 MicroPython, Raspberry Pi Pico 예제를 한 저장소에서 
 | arduino | 10 · 움직임을 감지하는 PIR 센서 | [예제 보기](arduino/010-pir/) |
 | arduino | 11 · 온도에 따라 저항이 바뀌는 NTC 센서 | [예제 보기](arduino/011-ntc/) |
 | arduino | 12 · 디지털로 온도를 읽는 DS18B20 | [예제 보기](arduino/012-ds18b20/) |
+| arduino | 13 · 두 방향의 입력을 읽는 조이스틱 | [예제 보기](arduino/013-joystick/) |
 
 제작 순서: 기본 세팅 → 신호처리 → 아날로그센서 → 디지털센서 → 서보모터 → DC모터 → 기타 센서류. 실습별 검증 범위와 자료 출처는 각 폴더의 README를 확인하세요.

@@ -1,0 +1,2 @@
+No additional libraries required.
+Arduino AVR Boards 1.8.6
