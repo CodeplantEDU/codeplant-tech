@@ -1,0 +1,2 @@
+RotaryEncoder@1.6.0 by Matthias Hertel
+Arduino AVR Boards 1.8.6
