@@ -1,0 +1,166 @@
+{
+  "version": 1,
+  "author": "CODEPLANT",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "id": "uno",
+      "type": "wokwi-arduino-uno",
+      "left": 60,
+      "top": 230,
+      "scale": 1.6,
+      "attrs": {},
+      "pins": {
+        "5V": [
+          160,
+          191.5
+        ],
+        "GND.2": [
+          169.5,
+          191.5
+        ],
+        "A4": [
+          246,
+          191.5
+        ],
+        "A5": [
+          255.5,
+          191.5
+        ]
+      }
+    },
+    {
+      "id": "mpu",
+      "type": "adafruit-mpu6050-3886-stemma-qt",
+      "left": 780,
+      "top": 270,
+      "scale": 4,
+      "attrs": {},
+      "pins": {
+        "VIN": [
+          22.029261299999998,
+          43.2000008
+        ],
+        "3Vo": [
+          29.229264299999997,
+          43.2000008
+        ],
+        "GND": [
+          36.42926430000001,
+          43.2000008
+        ],
+        "SCL": [
+          43.62925930000001,
+          43.2000008
+        ],
+        "SDA": [
+          50.82926030000001,
+          43.2000008
+        ],
+        "INT": [
+          58.0292613,
+          43.2000008
+        ],
+        "AD0": [
+          22.029261299999998,
+          7.199999099999999
+        ],
+        "FS": [
+          29.229264299999997,
+          7.199999099999999
+        ],
+        "SCE": [
+          36.42926430000001,
+          7.199999099999999
+        ],
+        "SDE": [
+          43.62925930000001,
+          7.199999099999999
+        ],
+        "CLKIN": [
+          50.82926030000001,
+          7.199999099999999
+        ],
+        "GND_TOP": [
+          58.0292613,
+          7.199999099999999
+        ]
+      },
+      "pinIds": {
+        "VIN": 37,
+        "3Vo": 38,
+        "GND": 39,
+        "SCL": 40,
+        "SDA": 41,
+        "INT": 42,
+        "AD0": 31,
+        "FS": 32,
+        "SCE": 33,
+        "SDE": 34,
+        "CLKIN": 35,
+        "GND_TOP": 36
+      }
+    }
+  ],
+  "connections": [
+    [
+      "uno:5V",
+      "mpu:VIN",
+      "red",
+      []
+    ],
+    [
+      "uno:GND.2",
+      "mpu:GND",
+      "black",
+      []
+    ],
+    [
+      "uno:A4",
+      "mpu:SDA",
+      "blue",
+      []
+    ],
+    [
+      "uno:A5",
+      "mpu:SCL",
+      "yellow",
+      []
+    ]
+  ],
+  "dependencies": {},
+  "previewRoutes": {
+    "uno:5V": "M316 536.4 V650 H868.117045 V442.800003",
+    "uno:GND.2": "M331.2 536.4 V620 H858.117045 Q868.117045 606 878.117045 620 H925.717057 V442.800003",
+    "uno:A4": "M453.6 536.4 V590 H858.117045 Q868.117045 576 878.117045 590 H915.717057 Q925.717057 576 935.717057 590 H983.317041 V442.800003",
+    "uno:A5": "M468.8 536.4 V560 H858.117045 Q868.117045 546 878.117045 560 H915.717057 Q925.717057 546 935.717057 560 H954.517037 V442.800003"
+  },
+  "insulatedCrossings": [
+    [
+      "black",
+      868.1170452,
+      620
+    ],
+    [
+      "blue",
+      868.1170452,
+      590
+    ],
+    [
+      "blue",
+      925.7170572,
+      590
+    ],
+    [
+      "yellow",
+      868.1170452,
+      560
+    ],
+    [
+      "yellow",
+      925.7170572,
+      560
+    ]
+  ],
+  "note": "Educational layout metadata, not runnable Wokwi simulation. Official Adafruit Fritzing MPU6050 #3886 geometry includes translated groups; coordinates include all translations. Unused pins and connectors are not wired. GY-521 is not interchangeable with this 5V level-shifted breakout."
+}
