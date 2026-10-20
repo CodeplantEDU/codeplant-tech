@@ -1,0 +1,4 @@
+Adafruit_VL53L0X@1.2.5
+Arduino AVR Boards@1.8.6
+Wire@1.0 (bundled with AVR Boards)
+Library metadata dependencies for its examples: Adafruit SSD1306@2.5.17, Adafruit GFX Library@1.12.6

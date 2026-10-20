@@ -20,5 +20,6 @@ Arduino UNO, ESP32 MicroPython, Raspberry Pi Pico 예제를 한 저장소에서 
 | arduino | 14 · 회전 방향을 읽는 로터리 인코더 | [예제 보기](arduino/014-rotary-encoder/) |
 | arduino | 15 · 기압과 온도를 읽는 BMP280 센서 | [예제 보기](arduino/015-bmp280/) |
 | arduino | 16 · MPU6050으로 롤·피치·요 읽기 | [예제 보기](arduino/016-mpu6050/) |
+| arduino | 17 · 빛으로 거리를 읽는 VL53L0X 센서 | [예제 보기](arduino/017-vl53l0x/) |
 
 제작 순서: 기본 세팅 → 신호처리 → 아날로그센서 → 디지털센서 → 서보모터 → DC모터 → 기타 센서류. 실습별 검증 범위와 자료 출처는 각 폴더의 README를 확인하세요.
