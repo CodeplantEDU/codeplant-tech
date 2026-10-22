@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "kind": "physical-wiring-metadata",
+  "executableSimulation": false,
+  "parts": [
+    {
+      "id": "uno",
+      "type": "wokwi-arduino-uno",
+      "left": 40,
+      "top": 160,
+      "scale": 1.6
+    },
+    {
+      "id": "ir",
+      "type": "physical-TSOP38238-front-photo",
+      "left": 600,
+      "top": 160,
+      "scale": 0.6
+    }
+  ],
+  "connections": [
+    [
+      "uno:2",
+      "ir:OUT"
+    ],
+    [
+      "uno:GND.2",
+      "ir:GND"
+    ],
+    [
+      "uno:5V",
+      "ir:VS"
+    ]
+  ],
+  "sourcePinCoordinates": {
+    "uno:2": [
+      236.5,
+      9
+    ],
+    "uno:GND.2": [
+      169.5,
+      191.5
+    ],
+    "uno:5V": [
+      160,
+      191.5
+    ],
+    "ir:OUT": [
+      440,
+      638
+    ],
+    "ir:GND": [
+      486,
+      638
+    ],
+    "ir:VS": [
+      534,
+      638
+    ]
+  },
+  "sourcePhoto": "ir-front-pins.jpg",
+  "orientation": "rounded lens facing viewer; left pin1 OUT, middle pin2 GND, right pin3 VS"
+}
