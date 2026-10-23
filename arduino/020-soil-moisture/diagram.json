@@ -1,0 +1,69 @@
+{
+  "kind": "physical-wiring-metadata",
+  "executableSimulation": false,
+  "connections": [
+    [
+      "uno:5V",
+      "soil:VCC"
+    ],
+    [
+      "uno:GND.2",
+      "soil:GND"
+    ],
+    [
+      "uno:A0",
+      "soil:Signal"
+    ]
+  ],
+  "pins": {
+    "uno:5V": [
+      296,
+      466.4
+    ],
+    "uno:GND.2": [
+      311.2,
+      466.4
+    ],
+    "uno:A0": [
+      372.8,
+      466.4
+    ],
+    "soil:Signal": [
+      658,
+      228.8
+    ],
+    "soil:VCC": [
+      658,
+      240
+    ],
+    "soil:GND": [
+      658,
+      251.2
+    ]
+  },
+  "sourceImage": "manufacturer-wiring.png",
+  "sensorSourceCoordinates": {
+    "Signal": [
+      330,
+      78
+    ],
+    "VCC": [
+      330,
+      85
+    ],
+    "GND": [
+      330,
+      92
+    ]
+  },
+  "sensorTransform": "left650 top200; crop325,60; scale1.6",
+  "unoTransform": "left40 top160 scale1.6",
+  "insulatedBridge": {
+    "net": "GND",
+    "crosses": "VCC",
+    "center": [
+      620,
+      550
+    ]
+  }
+}
