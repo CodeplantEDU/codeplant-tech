@@ -1,0 +1,17 @@
+{
+  "kind": "usb-setup-metadata",
+  "board": "ESP32 DevKit v1 / ESP-WROOM-32 / 30-pin / Micro-USB",
+  "connections": [
+    {
+      "from": "PC USB",
+      "to": "board Micro-USB",
+      "cable": "USB data cable",
+      "purpose": [
+        "power",
+        "serial data"
+      ]
+    }
+  ],
+  "externalGPIOConnections": [],
+  "simulationExecutable": false
+}

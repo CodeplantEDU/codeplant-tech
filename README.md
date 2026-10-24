@@ -24,5 +24,6 @@ Arduino UNO, ESP32 MicroPython, Raspberry Pi Pico 예제를 한 저장소에서 
 | arduino | 18 · 무게를 숫자로 읽는 HX711과 로드셀 | [예제 보기](arduino/018-hx711/) |
 | arduino | 19 · 리모컨의 빛 신호를 IR 수신기로 읽기 | [예제 보기](arduino/019-ir-receiver/) |
 | arduino | 20 · 흙의 변화를 읽는 정전용량식 수분 센서 | [예제 보기](arduino/020-soil-moisture/) |
+| esp32 | 01 · ESP32 MicroPython 기본 세팅부터 첫 실행까지 | [예제 보기](esp32/001-basic-setup/) |
 
 제작 순서: 기본 세팅 → 신호처리 → 아날로그센서 → 디지털센서 → 서보모터 → DC모터 → 기타 센서류. 실습별 검증 범위와 자료 출처는 각 폴더의 README를 확인하세요.
