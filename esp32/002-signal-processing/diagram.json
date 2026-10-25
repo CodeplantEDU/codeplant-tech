@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "author": "CODEPLANT",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": 170,
+      "left": 750,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r",
+      "top": 341.3,
+      "left": 420,
+      "attrs": {
+        "value": "470"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led",
+      "top": 250,
+      "left": 140,
+      "attrs": {
+        "color": "red"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "esp:D25",
+      "r:2",
+      "yellow",
+      []
+    ],
+    [
+      "r:1",
+      "led:A",
+      "yellow",
+      []
+    ],
+    [
+      "led:C",
+      "esp:GND.2",
+      "black",
+      []
+    ]
+  ],
+  "dependencies": {}
+}

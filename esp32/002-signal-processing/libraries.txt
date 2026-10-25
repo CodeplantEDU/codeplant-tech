@@ -1,0 +1,1 @@
+# MicroPython built-in machine.Pin and machine.PWM only
