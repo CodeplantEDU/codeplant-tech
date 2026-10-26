@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ESP32 + 모듈형 CDS 센서 AO 회로</title>
+  <script type="module" src="https://unpkg.com/@wokwi/elements@1.9.2/dist/wokwi-elements.bundle.js"></script>
+  <style>
+    @font-face {font-family:Pretendard;src:url('/assets/Pretendard-Regular.ttf')} * { box-sizing: border-box; }
+    html, body { margin: 0; width: 100%; height: 100%; background: #eef3f7; font-family: Pretendard, "Malgun Gothic", sans-serif; }
+    .canvas { position: relative; width: 1200px; height: 760px; margin: 0 auto; overflow: hidden; background: #DFEAFF; }
+    h1 { position: absolute; left: 48px; top: 28px; margin: 0; font-size: 30px; color: #152635; }
+    .subtitle { position: absolute; left: 50px; top: 76px; color: #607281; font-size: 17px; }
+    .board { position: absolute; left: 250px; top: 130px; transform: scale(1.6); transform-origin: top left; filter: drop-shadow(0 5px 8px #0003); }
+    .sensor { position: absolute; left: 650px; top: 314.458px; transform: translate(263.977px,93.452px) rotate(180deg) scale(1.52); transform-origin: top left; filter: drop-shadow(0 5px 8px #0003); }
+    .wire-layer { position: absolute; inset: 0; width: 1200px; height: 760px; pointer-events: none; }
+    .wire { fill: none; stroke-width: 8; stroke-linejoin: round; stroke-linecap: round; }
+    .red { stroke: #e31c23; }
+    .black { stroke: #151515; }
+    .yellow { stroke: #f2cc0c; filter: drop-shadow(0 0 1px #725f00); }
+    .joint { stroke: #fff; stroke-width: 2; }
+    .label { position: absolute; padding: 7px 12px; border-radius: 9px; color: #fff; font-weight: 700; font-size: 23px; box-shadow: 0 2px 5px #0003; }
+    .label.red { background: #d71920; }
+    .label.black { background: #161616; }
+    .label.yellow { background: #e9bf00; color: #2d2600; }
+    .vcc { left: 485px; top: 390px; }
+    .gnd { left: 485px; top: 300px; }
+    .d34 { left: 30px; top: 230px; }
+    .module-title { position: absolute; left: 650px; top: 275px; color: #253847; font-size: 20px; font-weight: 700; }
+    .unused { position: absolute; left: 842px; top: 276px; padding: 5px 9px; border: 2px dashed #99a6af; border-radius: 8px; background: #DFEAFF; color: #657680; font-size: 21px; font-weight: 700; }
+    .pin-guide { position: absolute; left: 700px; top: 430px; padding: 10px 14px; border: 2px solid #d9e2e8; border-radius: 10px; background: #DFEAFF; color: #354956; font-size: 22px; line-height: 1.6; }
+    .pin-guide strong { color: #192c3a; }
+    .note { position: absolute; left: 50px; right: 50px; bottom: 33px; height: 88px; border-radius: 14px; background: #f1f7fb; border: 2px solid #d5e3ec; display: flex; align-items: center; justify-content: center; gap: 20px; font-size: 21px; color: #253847; }
+    .swatch { display: inline-block; width: 34px; height: 7px; border-radius: 5px; margin-right: 9px; vertical-align: middle; }
+  </style>
+</head>
+<body>
+  <main class="canvas" aria-label="ESP32 모듈형 CDS 센서 AO 회로도">
+    <h1>ESP32 DevKit V1 + 모듈형 CDS 센서</h1>
+    <div class="subtitle">아날로그 출력 사용: CDS의 AO 핀을 ESP32 GPIO34에 연결</div>
+
+    <wokwi-esp32-devkit-v1 class="board"></wokwi-esp32-devkit-v1>
+    <wokwi-photoresistor-sensor class="sensor" lux="500"></wokwi-photoresistor-sensor>
+    <div class="module-title">CDS 센서 모듈</div>
+
+    <svg class="wire-layer" viewBox="0 0 1200 760" aria-hidden="true">
+      <!-- ESP32 3V3=(412.08,383.6), GND.1=(412.08,368.4), D34=(258,214.96) -->
+      <!-- CDS를 180도 회전: VCC=(652.54,383.59), GND=(652.54,368.39), DO=(652.54,353.49), AO=(652.54,338.75) -->
+      <path class="wire red" d="M412.08 383.6 H652.54" />
+      <path class="wire black" d="M412.08 368.4 H652.54" />
+      <path class="wire yellow" d="M258 214.96 H150 V110 H620 V338.75 H652.54" />
+
+      <circle class="joint" cx="412.08" cy="383.6" r="5" fill="#e31c23" />
+      <circle class="joint" cx="412.08" cy="368.4" r="5" fill="#151515" />
+      <circle cx="258" cy="214.96" r="5" fill="#f2cc0c" stroke="#6f5d00" stroke-width="2" />
+      <circle class="joint" cx="652.54" cy="383.59" r="5" fill="#e31c23" />
+      <circle class="joint" cx="652.54" cy="368.39" r="5" fill="#151515" />
+      <circle cx="652.54" cy="353.49" r="5" fill="#aab4bb" stroke="#fff" stroke-width="2" />
+      <circle cx="652.54" cy="338.75" r="5" fill="#f2cc0c" stroke="#6f5d00" stroke-width="2" />
+    </svg>
+
+    <div class="label red vcc">3V3 → VCC</div>
+    <div class="label black gnd">GND</div>
+    <div class="label yellow d34">GPIO34 → AO</div>
+    <div class="unused">DO 미사용</div>
+    <div class="pin-guide"><strong>왼쪽 핀 위→아래</strong><br>AO · DO · GND · VCC<br><strong>이번 회로:</strong> AO만 측정</div>
+
+    <div class="note">
+      <span><i class="swatch" style="background:#e31c23"></i>빨강: 3V3 → VCC</span>
+      <span><i class="swatch" style="background:#151515"></i>검정: GND → GND</span>
+      <span><i class="swatch" style="background:#f2cc0c"></i>노랑: GPIO34 → AO</span>
+      <strong>DO 핀은 연결하지 않음</strong>
+    </div>
+  </main>
+</body>
+</html>

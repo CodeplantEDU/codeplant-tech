@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "author": "Codex - wokwi-circuit-builder",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "cds",
+      "top": 245,
+      "left": 360,
+      "rotate": 180,
+      "attrs": {
+        "lux": "500"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "esp:3V3",
+      "cds:VCC",
+      "red",
+      ["h250"]
+    ],
+    [
+      "esp:GND.1",
+      "cds:GND",
+      "black",
+      ["h250"]
+    ],
+    [
+      "esp:D34",
+      "cds:AO",
+      "yellow",
+      ["h-55", "v-95", "h455", "v210"]
+    ]
+  ],
+  "dependencies": {}
+}
