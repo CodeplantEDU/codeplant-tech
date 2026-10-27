@@ -27,5 +27,6 @@ Arduino UNO, ESP32 MicroPython, Raspberry Pi Pico 예제를 한 저장소에서 
 | esp32 | 01 · ESP32 MicroPython 기본 세팅부터 첫 실행까지 | [예제 보기](esp32/001-basic-setup/) |
 | esp32 | 02 · 입력부터 출력까지, ESP32 신호처리 | [예제 보기](esp32/002-signal-processing/) |
 | esp32 | 03 · 빛의 변화를 조도센서 AO로 읽기 | [예제 보기](esp32/003-cds-ao/) |
+| esp32 | 04 · 기울기로 접점을 바꾸는 2핀 볼 스위치 | [예제 보기](esp32/004-tilt/) |
 
 제작 순서: 기본 세팅 → 신호처리 → 아날로그센서 → 디지털센서 → 서보모터 → DC모터 → 기타 센서류. 실습별 검증 범위와 자료 출처는 각 폴더의 README를 확인하세요.

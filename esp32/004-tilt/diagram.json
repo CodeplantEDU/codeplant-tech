@@ -1,0 +1,99 @@
+{
+  "version": 1,
+  "editor": "codeplant",
+  "author": "CODEPLANT",
+  "note": "2핀 Fritzing 접점 도형. Wokwi 3핀 tilt 모듈 아님. 편집용 데이터이며 시뮬레이션 실행 자료가 아님.",
+  "parts": [
+    {
+      "id": "esp",
+      "type": "wokwi-esp32-devkit-v1",
+      "left": 800,
+      "top": 150,
+      "scale": 2,
+      "pins": {
+        "D27": [
+          5,
+          110.8
+        ],
+        "GND.2": [
+          5,
+          149
+        ]
+      },
+      "source": "https://github.com/wokwi/wokwi-elements/blob/main/src/esp32-devkit-v1-element.ts"
+    },
+    {
+      "id": "tilt",
+      "type": "fritzing-two-pin-ball-switch",
+      "left": 400,
+      "top": 200,
+      "scale": 8,
+      "rotate": -90,
+      "viewBox": [
+        0,
+        0,
+        30,
+        30
+      ],
+      "pins": {
+        "1": [
+          14.367,
+          27.819
+        ],
+        "2": [
+          21.582,
+          27.819
+        ]
+      },
+      "source": "https://github.com/fritzing/fritzing-parts/blob/develop/svg/core/breadboard/tilt_switch.svg"
+    }
+  ],
+  "connections": [
+    [
+      "esp:D27",
+      "tilt:2",
+      "yellow",
+      [
+        [
+          810,
+          371.6
+        ],
+        [
+          720,
+          371.6
+        ],
+        [
+          720,
+          267.344
+        ],
+        [
+          622.552,
+          267.344
+        ]
+      ]
+    ],
+    [
+      "esp:GND.2",
+      "tilt:1",
+      "black",
+      [
+        [
+          810,
+          448
+        ],
+        [
+          675,
+          448
+        ],
+        [
+          675,
+          325.064
+        ],
+        [
+          622.552,
+          325.064
+        ]
+      ]
+    ]
+  ]
+}

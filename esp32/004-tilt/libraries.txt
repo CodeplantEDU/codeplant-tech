@@ -1,0 +1,2 @@
+MicroPython v1.29.0 ESP32_GENERIC (classic ESP32)
+Built-in machine.Pin and time only; no additional package.
