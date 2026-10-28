@@ -1,0 +1,173 @@
+{
+  "version": 1,
+  "author": "CODEPLANT",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": 150,
+      "left": 80,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "servo1",
+      "top": 140,
+      "left": 900,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-vcc",
+      "id": "ext5v",
+      "top": 100,
+      "left": 650,
+      "attrs": {
+        "voltage": 5
+      }
+    },
+    {
+      "type": "wokwi-gnd",
+      "id": "extgnd",
+      "top": 610,
+      "left": 650,
+      "attrs": {}
+    },
+    {
+      "type": "custom-sn74ahct125n",
+      "id": "u1",
+      "top": 250,
+      "left": 490,
+      "attrs": {
+        "package": "TI N PDIP14",
+        "source": "https://www.ti.com/lit/ds/symlink/sn74ahct125.pdf"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "attrs": {
+        "value": "10000"
+      }
+    },
+    {
+      "type": "wokwi-capacitor",
+      "id": "c1",
+      "attrs": {
+        "value": "100nF"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "esp:D18",
+      "u1:2",
+      "yellow",
+      []
+    ],
+    [
+      "u1:3",
+      "servo1:PWM",
+      "yellow",
+      []
+    ],
+    [
+      "ext5v:VCC",
+      "servo1:V+",
+      "red",
+      []
+    ],
+    [
+      "extgnd:GND",
+      "servo1:GND",
+      "black",
+      []
+    ],
+    [
+      "esp:GND.1",
+      "extgnd:GND",
+      "black",
+      []
+    ],
+    [
+      "ext5v:VCC",
+      "u1:14",
+      "red",
+      []
+    ],
+    [
+      "ext5v:VCC",
+      "u1:4",
+      "red",
+      []
+    ],
+    [
+      "ext5v:VCC",
+      "u1:10",
+      "red",
+      []
+    ],
+    [
+      "ext5v:VCC",
+      "u1:13",
+      "red",
+      []
+    ],
+    [
+      "extgnd:GND",
+      "u1:1",
+      "black",
+      []
+    ],
+    [
+      "extgnd:GND",
+      "u1:7",
+      "black",
+      []
+    ],
+    [
+      "extgnd:GND",
+      "u1:5",
+      "black",
+      []
+    ],
+    [
+      "extgnd:GND",
+      "u1:9",
+      "black",
+      []
+    ],
+    [
+      "extgnd:GND",
+      "u1:12",
+      "black",
+      []
+    ],
+    [
+      "u1:2",
+      "r1:1",
+      "yellow",
+      []
+    ],
+    [
+      "r1:2",
+      "extgnd:GND",
+      "black",
+      []
+    ],
+    [
+      "c1:1",
+      "ext5v:VCC",
+      "red",
+      []
+    ],
+    [
+      "c1:2",
+      "extgnd:GND",
+      "black",
+      []
+    ]
+  ],
+  "dependencies": {},
+  "notes": "Custom TI PDIP symbol is editable net data, not a configured Wokwi simulation. Outputs6/8/11 NC. External power must remain OFF on reset/restart."
+}
