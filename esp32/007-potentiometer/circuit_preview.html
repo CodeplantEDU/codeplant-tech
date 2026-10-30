@@ -1,0 +1,26 @@
+<!doctype html><html lang="ko"><meta charset="utf-8"><title>ESP32 + 10kΩ 가변저항 배선</title>
+<script type="module" src="https://unpkg.com/@wokwi/elements@1.9.2/dist/wokwi-elements.bundle.js"></script>
+<style>@font-face{font-family:Pretendard;src:url(/assets/Pretendard-Regular.ttf)}*{box-sizing:border-box}body{margin:0;font-family:Pretendard,"Malgun Gothic",sans-serif}.canvas{position:relative;width:1200px;height:760px;overflow:hidden;background:#DFEAFF}h1{position:absolute;left:45px;top:25px;margin:0;font-size:30px;color:#315DAB}.board{position:absolute;left:250px;top:170px;transform:scale(1.8);transform-origin:top left}.pot{position:absolute;left:810px;top:230px;transform:scale(3.5);transform-origin:top left}.wires{position:absolute;inset:0;width:1200px;height:760px;pointer-events:none}.wire{fill:none;stroke-width:7;stroke-linejoin:round;stroke-linecap:round}.label{position:absolute;font-size:23px;padding:7px 12px;border:1px solid #d5dfed;background:#fff;border-radius:8px;line-height:1.5}.note{position:absolute;left:45px;right:45px;bottom:55px;font-size:23px;line-height:1.5;color:#253847}.source{position:absolute;left:45px;bottom:20px;font-size:13px;color:#607281}</style>
+<main class="canvas" aria-label="ESP32 3V3와 오른쪽 GND, D34를 가변저항 양끝과 가운데 다리에 연결">
+<h1>ESP32 DevKit v1 + 3핀 가변저항 (10kΩ)</h1>
+<div class="label" style="left:45px;top:73px">USB를 빼고 연결 · 가운데 다리는 D34 · 양끝은 3V3와 GND</div>
+<wokwi-esp32-devkit-v1 class="board"></wokwi-esp32-devkit-v1>
+<wokwi-potentiometer class="pot" value="512"></wokwi-potentiometer>
+<svg class="wires" viewBox="0 0 1200 760">
+<path data-net="esp:3V3" class="wire" stroke="#e31c23" d="M432.34 455.3 V590 H981.5 V469.75"/>
+<path data-net="esp:GND.1" class="wire" stroke="#151515" d="M432.34 438.2 H730 V510 H911.5 V469.75"/>
+<path data-net="esp:D34" class="wire" stroke="#f2cc0c" d="M259 265.58 H155 V130 H760 V498 Q748 510 760 522 V570 H946.5 V469.75"/>
+<circle cx="432.34" cy="455.3" r="5" fill="#e31c23" stroke="white" stroke-width="2"/>
+<circle cx="432.34" cy="438.2" r="5" fill="#151515" stroke="white" stroke-width="2"/>
+<circle cx="259" cy="265.58" r="5" fill="#f2cc0c" stroke="#6f5d00" stroke-width="2"/>
+<circle cx="981.5" cy="469.75" r="5" fill="#e31c23" stroke="white" stroke-width="2"/>
+<circle cx="911.5" cy="469.75" r="5" fill="#151515" stroke="white" stroke-width="2"/>
+<circle cx="946.5" cy="469.75" r="5" fill="#f2cc0c" stroke="#6f5d00" stroke-width="2"/>
+</svg>
+<div class="label" style="left:455px;top:365px">오른쪽 GND</div>
+<div class="label" style="left:785px;top:175px">가변저항 · 설명용 Wokwi 도형</div>
+<div class="label" style="left:470px;top:530px;color:#b72727">3V3 → 양끝 한쪽</div>
+<div class="label" style="left:45px;top:290px;color:#806900">D34 → 가운데 SIG</div>
+<div class="note">빨강: 3V3 / 검정: 오른쪽 GND / 노랑: GPIO34 입력<br>노란 선의 둥근 교차는 접속 아님 · 실물은 가운데 접점과 양끝을 구분</div>
+<div class="source">ESP32·가변저항 도형: Wokwi 공식 부품. 실제 제품 사진은 표지 참고.</div>
+</main></html>

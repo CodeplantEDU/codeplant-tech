@@ -1,0 +1,80 @@
+{
+  "version": 1,
+  "author": "CODEPLANT",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "id": "esp",
+      "type": "wokwi-esp32-devkit-v1",
+      "left": 250,
+      "top": 170,
+      "scale": 1.8,
+      "attrs": {},
+      "pins": {
+        "D34": [
+          5,
+          53.1
+        ],
+        "GND.1": [
+          101.3,
+          149
+        ],
+        "3V3": [
+          101.3,
+          158.5
+        ]
+      }
+    },
+    {
+      "id": "pot",
+      "type": "wokwi-potentiometer",
+      "left": 810,
+      "top": 230,
+      "scale": 3.5,
+      "attrs": {
+        "value": "512"
+      },
+      "pins": {
+        "GND": [
+          29,
+          68.5
+        ],
+        "SIG": [
+          39,
+          68.5
+        ],
+        "VCC": [
+          49,
+          68.5
+        ]
+      }
+    }
+  ],
+  "connections": [
+    [
+      "esp:3V3",
+      "pot:VCC",
+      "red",
+      []
+    ],
+    [
+      "esp:GND.1",
+      "pot:GND",
+      "black",
+      []
+    ],
+    [
+      "esp:D34",
+      "pot:SIG",
+      "yellow",
+      []
+    ]
+  ],
+  "dependencies": {},
+  "previewRoutes": {
+    "esp:3V3": "M432.34 455.3 V590 H981.5 V469.75",
+    "esp:GND.1": "M432.34 438.2 H730 V510 H911.5 V469.75",
+    "esp:D34": "M259 265.58 H155 V130 H760 V498 Q748 510 760 522 V570 H946.5 V469.75"
+  },
+  "note": "Stock Wokwi illustrative parts, not a photo of Adafruit 562. No simulation performed."
+}
