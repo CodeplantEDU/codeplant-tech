@@ -1,0 +1,33 @@
+<!doctype html><html lang="ko"><meta charset="utf-8"><title>ESP32 + DHT22 4핀 배선</title>
+<script type="module" src="https://unpkg.com/@wokwi/elements@1.9.2/dist/wokwi-elements.bundle.js"></script>
+<style>@font-face{font-family:Pretendard;src:url('/assets/Pretendard-Regular.ttf')}*{box-sizing:border-box}body{margin:0;font-family:Pretendard,"Malgun Gothic",sans-serif}.canvas{position:relative;width:1200px;height:760px;overflow:hidden;background:#DFEAFF}h1{position:absolute;left:45px;top:24px;margin:0;font-size:30px;color:#315DAB}.board{position:absolute;left:220px;top:170px;transform:scale(2.2);transform-origin:top left}.sensor{position:absolute;left:850px;top:160px;transform:scale(3);transform-origin:top left}.resistor{position:absolute;left:780px;top:570px;transform:rotate(90deg) scale(1.5);transform-origin:top left}.wires{position:absolute;inset:0;width:1200px;height:760px;pointer-events:none}.wire{fill:none;stroke-width:6;stroke-linejoin:round;stroke-linecap:round}.label{position:absolute;font-size:23px;padding:6px 10px;background:white;border:1px solid #d5dfed;border-radius:6px;line-height:1.4}.note{position:absolute;left:45px;right:45px;bottom:27px;font-size:22px;line-height:1.4;color:#253847}.source{position:absolute;left:45px;bottom:5px;font-size:13px;color:#607281}</style>
+<main class="canvas" aria-label="ESP32 3V3 GPIO4 GND와 DHT22 1 2 4번 다리 및 10k 풀업; 3번 미사용">
+<h1>ESP32 DevKit v1 + DHT22 (4핀 원소자)</h1>
+<wokwi-esp32-devkit-v1 class="board"></wokwi-esp32-devkit-v1><wokwi-dht22 class="sensor"></wokwi-dht22><wokwi-resistor class="resistor" value="10000"></wokwi-resistor>
+<svg class="wires" viewBox="0 0 1200 760">
+<path data-net="esp:3V3" class="wire" stroke="#e31c23" d="M442.86 518.7 H620 V670 H895 V504.7"/>
+<path data-net="esp:GND.1" class="wire" stroke="#151515" d="M442.86 497.8 H570 V446 Q558 434 570 422 V90 H1120 V610 H981.4 V504.7"/>
+<path data-net="esp:D4" class="wire" stroke="#e7c500" d="M442.86 434 H740 V550 H885 Q895 535 905 550 H923.5 V504.7"/>
+<path data-net="r1:1" class="wire" stroke="#e7c500" d="M771.525 570 V550 H885 Q895 535 905 550 H923.5 V504.7"/>
+<path data-net="r1:2" class="wire" stroke="#e31c23" d="M771.525 658.2 V670 H895 V504.7"/>
+<path d="M885 550 Q895 535 905 550" fill="none" stroke="white" stroke-width="14"/>
+<path d="M885 550 Q895 535 905 550" fill="none" stroke="#e7c500" stroke-width="6"/>
+<path d="M570 446 Q558 434 570 422" fill="none" stroke="#DFEAFF" stroke-width="14"/><path d="M570 446 Q558 434 570 422" fill="none" stroke="#151515" stroke-width="6"/><circle cx="442.86" cy="518.7" r="4" fill="#e31c23" stroke="white" stroke-width="1"/>
+<circle cx="895" cy="504.7" r="4" fill="#e31c23" stroke="white" stroke-width="1"/>
+<circle cx="442.86" cy="497.8" r="4" fill="#151515" stroke="white" stroke-width="1"/>
+<circle cx="981.4" cy="504.7" r="4" fill="#151515" stroke="white" stroke-width="1"/>
+<circle cx="442.86" cy="434" r="4" fill="#e7c500" stroke="white" stroke-width="1"/>
+<circle cx="923.5" cy="504.7" r="4" fill="#e7c500" stroke="white" stroke-width="1"/>
+<circle cx="771.525" cy="570" r="4" fill="#e7c500" stroke="white" stroke-width="1"/>
+<circle cx="771.525" cy="658.2" r="4" fill="#e31c23" stroke="white" stroke-width="1"/>
+<circle cx="771.525" cy="550" r="5" fill="#151515"/><circle cx="771.525" cy="670" r="5" fill="#151515"/>
+</svg>
+<div class="label" style="left:470px;top:445px">GND</div><div class="label" style="left:470px;top:365px">D4 → DATA</div>
+<div class="label" style="left:795px;top:104px">통풍구 앞면 · 다리는 아래로</div>
+<div class="label" style="left:600px;top:585px">10kΩ 풀업<br>DATA ↔ 3V3</div>
+<div class="label" style="left:470px;top:550px;color:#b72727">3V3 → 1번 VCC</div>
+<div class="label" style="left:1000px;top:470px">4번 GND</div>
+<div class="label" style="left:1010px;top:645px">3번 NC 미사용</div>
+<div class="note">USB를 빼고 연결 · 전원/풀업 모두 3.3V · 왼쪽부터 1 VCC / 2 DATA / 3 NC / 4 GND<br>검은 점: 연결 · 노랑의 둥근 건넘: 빨강과 연결되지 않음</div>
+<div class="source">도형: Wokwi 공식 부품 · SDA 표시는 DHT 데이터 핀 이름이며 I2C 연결이 아닙니다.</div>
+</main></html>
