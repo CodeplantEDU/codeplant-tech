@@ -1,0 +1,181 @@
+{
+  "version": 1,
+  "author": "CODEPLANT",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "id": "esp",
+      "type": "wokwi-esp32-devkit-v1",
+      "left": 90,
+      "top": 130,
+      "scale": 2,
+      "attrs": {},
+      "pins": {
+        "D25": [
+          5,
+          91.3
+        ],
+        "D26": [
+          5,
+          101
+        ],
+        "GND.2": [
+          5,
+          149
+        ]
+      }
+    },
+    {
+      "id": "sonar",
+      "type": "wokwi-hc-sr04",
+      "left": 650,
+      "top": 120,
+      "scale": 2.2,
+      "attrs": {
+        "distance": "100"
+      },
+      "pins": {
+        "VCC": [
+          71.3,
+          94.5
+        ],
+        "TRIG": [
+          81.3,
+          94.5
+        ],
+        "ECHO": [
+          91.3,
+          94.5
+        ],
+        "GND": [
+          101.3,
+          94.5
+        ]
+      }
+    },
+    {
+      "id": "r1",
+      "type": "wokwi-resistor",
+      "left": 1065,
+      "top": 450,
+      "scale": 1.5,
+      "rotate": 90,
+      "attrs": {
+        "value": "2200"
+      },
+      "pins": {
+        "1": [
+          0,
+          5.65
+        ],
+        "2": [
+          58.8,
+          5.65
+        ]
+      }
+    },
+    {
+      "id": "r2",
+      "type": "wokwi-resistor",
+      "left": 1065,
+      "top": 580,
+      "scale": 1.5,
+      "rotate": 90,
+      "attrs": {
+        "value": "3300"
+      },
+      "pins": {
+        "1": [
+          0,
+          5.65
+        ],
+        "2": [
+          58.8,
+          5.65
+        ]
+      }
+    },
+    {
+      "id": "supply",
+      "type": "wokwi-custom-power",
+      "left": 1010,
+      "top": 105,
+      "attrs": {
+        "voltage": "5",
+        "tolerancePercent": "5"
+      },
+      "pins": {
+        "V+": [
+          60,
+          30
+        ],
+        "GND": [
+          110,
+          30
+        ]
+      }
+    }
+  ],
+  "connections": [
+    [
+      "supply:V+",
+      "sonar:VCC",
+      "red",
+      []
+    ],
+    [
+      "supply:GND",
+      "sonar:GND",
+      "black",
+      []
+    ],
+    [
+      "esp:GND.2",
+      "supply:GND",
+      "black",
+      []
+    ],
+    [
+      "esp:D25",
+      "sonar:TRIG",
+      "yellow",
+      []
+    ],
+    [
+      "sonar:ECHO",
+      "r1:1",
+      "yellow",
+      []
+    ],
+    [
+      "r1:2",
+      "r2:1",
+      "blue",
+      []
+    ],
+    [
+      "r1:2",
+      "esp:D26",
+      "blue",
+      []
+    ],
+    [
+      "r2:2",
+      "supply:GND",
+      "black",
+      []
+    ]
+  ],
+  "dependencies": {},
+  "previewRoutes": {
+    "supply:V+": "M1070 135 V85 H620 V470 H806.86 V327.9",
+    "supply:GND": "M1120 135 V170 H1180 V690 H45 V428 H100",
+    "sonar:GND": "M872.86 327.9 V690",
+    "esp:D25": "M100 312.6 H55 V80 H570 V390 H608 Q620 378 632 390 H794.86 Q806.86 378 818.86 390 H828.86 V327.9",
+    "sonar:ECHO": "M850.86 327.9 V430 H860.86 Q872.86 418 884.86 430 H1056.525 V450",
+    "r1:2": "M1056.525 538.2 V580",
+    "esp:D26": "M100 332 H75 V416 Q87 428 75 440 V575 H500 V560 H860.86 Q872.86 548 884.86 560 H1056.525",
+    "r2:2": "M1056.525 668.2 V690"
+  },
+  "note": "Educational drawing with custom 5V regulated power terminal. ESP32 powered by USB only; no VIN/3V3 connection. External supply 5V +/-5%, resistors 2.2k/3.3k +/-5%. Common ground. ECHO divider midpoint -> GPIO26; TRIG GPIO25. No hardware or simulator execution claimed."
+}
