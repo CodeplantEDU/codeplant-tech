@@ -1,0 +1,100 @@
+{
+  "version": 1,
+  "author": "CODEPLANT",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "id": "esp",
+      "type": "wokwi-esp32-devkit-v1",
+      "left": 100,
+      "top": 180,
+      "scale": 2.2,
+      "attrs": {},
+      "pins": {
+        "D27": [
+          5,
+          110.8
+        ],
+        "GND.1": [
+          101.3,
+          149
+        ]
+      }
+    },
+    {
+      "id": "pir",
+      "type": "wokwi-pir-motion-sensor",
+      "left": 700,
+      "top": 180,
+      "scale": 3,
+      "attrs": {},
+      "pins": {
+        "VCC": [
+          36.178,
+          92
+        ],
+        "OUT": [
+          45.9175,
+          92
+        ],
+        "GND": [
+          55.6415,
+          92
+        ]
+      }
+    },
+    {
+      "id": "supply",
+      "type": "wokwi-custom-power",
+      "left": 925,
+      "top": 145,
+      "attrs": {
+        "voltage": "5"
+      },
+      "pins": {
+        "V+": [
+          60,
+          50
+        ],
+        "GND": [
+          135,
+          50
+        ]
+      }
+    }
+  ],
+  "connections": [
+    [
+      "supply:V+",
+      "pir:VCC",
+      "red",
+      []
+    ],
+    [
+      "supply:GND",
+      "pir:GND",
+      "black",
+      []
+    ],
+    [
+      "esp:GND.1",
+      "supply:GND",
+      "black",
+      []
+    ],
+    [
+      "pir:OUT",
+      "esp:D27",
+      "yellow",
+      []
+    ]
+  ],
+  "dependencies": {},
+  "previewRoutes": {
+    "supply:V+": "M985 195 V120 H660 V550 H808.534 V456",
+    "supply:GND": "M1060 195 V650 H380 V507.8 H322.86",
+    "pir:GND": "M866.9245 456 V650",
+    "esp:D27": "M111 423.76 H65 V680 H837.7525 V662 Q849.7525 650 837.7525 638 V456"
+  },
+  "note": "HC-SR501 SunFounder 5V power, 3.3V OUT -> GPIO27 INPUT no pull. ESP32 USB power, external +5V never to ESP32 VIN/3V3. Common GND. Custom external supply is explanatory drawing, not Wokwi simulation."
+}
