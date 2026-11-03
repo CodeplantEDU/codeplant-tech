@@ -1,6 +1,6 @@
 """Synthetic host checks. No physical ADC or NTC measurements."""
 from pathlib import Path
-import ast,contextlib,io,json,sys,types,copy
+import ast,contextlib,io,json,sys,types,copy,re
 p=Path(__file__).resolve().parent
 source=(p/'main.py').read_text(encoding='utf-8');ast.parse(source)
 d=json.loads((p/'diagram.json').read_text(encoding='utf-8'))
@@ -15,7 +15,7 @@ for i,j,pin in [(0,0,'esp:VIN'),(0,0,'esp:GND.1'),(2,0,'esp:D27'),(3,1,'ntc:1')]
  except AssertionError:pass
  else:raise AssertionError('unsafe wiring accepted')
 import xml.etree.ElementTree as ET
-svg=ET.fromstring((p/'ntc-original.svg').read_text(encoding='utf-8'))
+svg=ET.fromstring(re.search(r'<svg class="ntc".*?</svg>',(p/'circuit_preview.html').read_text(encoding='utf-8'),re.S).group(0))
 for leg,pin,expected in [('connector0leg','1',(937.5,456.25)),('connector1leg','2',(1037.5,456.25))]:
  el=next(x for x in svg.iter() if x.attrib.get('id')==leg)
  xy=(float(el.attrib['x2']),float(el.attrib['y2']))
