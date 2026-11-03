@@ -56,8 +56,12 @@ out,log=run([65535]*10+[KeyboardInterrupt()]);assert 'ADC_ENDPOINT raw_u16 = 655
 out,log=run([],True);assert out.endswith('STOP\n') and log==[1000]
 out,log=run([OSError('mock')]);assert 'ADC_ERROR: mock' in out and log==[1000,'read'] and 'raw_u16 =' not in out
 assert source in (p/'README.md').read_text(encoding='utf-8')
-e=json.loads((p/'episode.json').read_text(encoding='utf-8'))
-assert len(e['cards'])==10 and e['category']=='other-sensors'
-assert not any(t in e['caption'] for t in ['미시험','미검증','검증 완료','댓글에'])
-for c in e['cards']:assert 'http' not in c['title']+c['lead']+c.get('note','')
+if (p/'episode.json').exists():
+ e=json.loads((p/'episode.json').read_text(encoding='utf-8'))
+ assert len(e['cards'])==10 and e['category']=='other-sensors'
+ assert not any(t in e['caption'] for t in ['미시험','미검증','검증 완료','댓글에'])
+ for c in e['cards']:assert 'http' not in c['title']+c['lead']+c.get('note','')
+else:
+ assert len(list((p/'cards').glob('[0-9][0-9].png')))==10
+ print('SKIP: local-only episode metadata/caption checks; episode.json is not in the public package.')
 print('PASS: syntax, README parity, 4 exact nets and 4 unsafe mutations, divider theory, GPIO34 ADC11dB, synthetic integer averaging/endpoints/reset/1000ms+10x10ms/order/Ctrl+C/OSError stop. Hardware NOT tested.')
