@@ -72,7 +72,7 @@ for val in [-1,101,70.0,True,'70']:
  try:ns['duty_value'](val)
  except ValueError:pass
  else:raise AssertionError(val)
-assert len(e['cards'])==12;assert e['caption'].count(e['repository'])==1;assert len(e['caption'])<=2200
+assert len(e['cards'])==10;assert e['caption'].count(e['repository'])==1;assert len(e['caption'])<=2200
 assert not any(x in e['caption'] for x in ['미시험','미검증','하드웨어 시험 미완료'])
 assert all('http' not in c.get('title','')+c.get('lead','')+c.get('note','') for c in e['cards'])
 print('PASS15 connections/3 removed jumpers/isolated5V-6V/10kENA/8photo endpoints/AST+README/rounding/range/unknown command/sequence with coast-before-reverse/Ctrl+C/PWM init-update-deinit faults; synthetic host only')
