@@ -64,7 +64,7 @@ for v in [1399,1601,1500.0,'1500']:
  try:ns['check_pulse'](v)
  except ValueError:pass
  else:raise AssertionError(v)
-e=json.loads((p/'episode.json').read_text(encoding='utf8'));assert len(e['cards'])==12
+e=json.loads((p/'episode.json').read_text(encoding='utf8'));assert len(e['cards'])==10
 assert e['caption'].count(e['repository'])==1
 assert not any(v in e['caption'] for v in ['미시험','미검증','하드웨어 시험 미완료'])
 assert all('http' not in c.get('title','')+c.get('lead','')+c.get('note','') for c in e['cards'])
