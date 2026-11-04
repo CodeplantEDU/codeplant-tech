@@ -1,0 +1,116 @@
+{
+  "version": 1,
+  "author": "CODEPLANT",
+  "editor": "codeplant",
+  "parts": [
+    {
+      "id": "esp",
+      "type": "wokwi-esp32-devkit-v1",
+      "left": 90,
+      "top": 190,
+      "scale": 2.2,
+      "attrs": {},
+      "pins": {
+        "D18": [
+          101.3,
+          81.7
+        ],
+        "GND.1": [
+          101.3,
+          149
+        ],
+        "3V3": [
+          101.3,
+          158.5
+        ]
+      }
+    },
+    {
+      "id": "temp",
+      "type": "wokwi-ds18b20",
+      "left": 900,
+      "top": 200,
+      "scale": 20,
+      "attrs": {
+        "temperature": "22"
+      },
+      "pins": {
+        "GND": [
+          1.46,
+          13
+        ],
+        "DQ": [
+          4,
+          13
+        ],
+        "VCC": [
+          6.54,
+          13
+        ]
+      },
+      "source": "https://github.com/wokwi/wokwi-boards/blob/main/boards/ds18b20/board.json"
+    },
+    {
+      "id": "r1",
+      "type": "wokwi-resistor",
+      "left": 780,
+      "top": 540,
+      "scale": 1.5,
+      "rotate": 90,
+      "attrs": {
+        "value": "4700"
+      },
+      "pins": {
+        "1": [
+          0,
+          5.65
+        ],
+        "2": [
+          58.8,
+          5.65
+        ]
+      }
+    }
+  ],
+  "connections": [
+    [
+      "esp:3V3",
+      "temp:VCC",
+      "red",
+      []
+    ],
+    [
+      "esp:GND.1",
+      "temp:GND",
+      "black",
+      []
+    ],
+    [
+      "esp:D18",
+      "temp:DQ",
+      "yellow",
+      []
+    ],
+    [
+      "r1:1",
+      "temp:DQ",
+      "yellow",
+      []
+    ],
+    [
+      "r1:2",
+      "temp:VCC",
+      "red",
+      []
+    ]
+  ],
+  "dependencies": {},
+  "previewRoutes": {
+    "esp:3V3": "M312.86 538.7 H500 V670 H1030.8 V460",
+    "esp:GND.1": "M312.86 517.8 H450 V382 Q438 370 450 358 V110 H850 V480 H929.2 V460",
+    "esp:D18": "M312.86 369.74 H740 V510 H980 V460",
+    "r1:1": "M771.525 540 V510 H980 V460",
+    "r1:2": "M771.525 628.2 V670 H1030.8 V460"
+  },
+  "note": "External 3.3V supply, TO-92 flat face forward: GND/DQ/VDD. Pull-up 4.7kΩ from DQ to 3V3. Preview geometry only."
+}
