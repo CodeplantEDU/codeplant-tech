@@ -1,0 +1,108 @@
+{
+  "version": 1,
+  "author": "CODEPLANT",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "id": "esp",
+      "type": "wokwi-esp32-devkit-v1",
+      "left": 120,
+      "top": 175,
+      "scale": 2.2,
+      "attrs": {},
+      "pins": {
+        "3V3": [
+          101.3,
+          158.5
+        ],
+        "GND.1": [
+          101.3,
+          149
+        ],
+        "D34": [
+          5,
+          53.1
+        ],
+        "D35": [
+          5,
+          62.9
+        ],
+        "D18": [
+          101.3,
+          81.7
+        ]
+      }
+    },
+    {
+      "id": "joy",
+      "type": "wokwi-analog-joystick",
+      "left": 790,
+      "top": 135,
+      "scale": 2.8,
+      "attrs": {},
+      "pins": {
+        "VCC": [
+          33,
+          115.8
+        ],
+        "VERT": [
+          42.6012,
+          115.8
+        ],
+        "HORZ": [
+          52.2024,
+          115.8
+        ],
+        "SEL": [
+          61.8036,
+          115.8
+        ],
+        "GND": [
+          71.4048,
+          115.8
+        ]
+      }
+    }
+  ],
+  "connections": [
+    [
+      "esp:3V3",
+      "joy:VCC",
+      "red",
+      []
+    ],
+    [
+      "esp:D35",
+      "joy:VERT",
+      "blue",
+      []
+    ],
+    [
+      "esp:D34",
+      "joy:HORZ",
+      "yellow",
+      []
+    ],
+    [
+      "esp:D18",
+      "joy:SEL",
+      "green",
+      []
+    ],
+    [
+      "esp:GND.1",
+      "joy:GND",
+      "black",
+      []
+    ]
+  ],
+  "dependencies": {},
+  "previewRoutes": {
+    "esp:3V3": "M342.86 523.7 L490 523.7 L490 565 L882.4 565 L882.4 459.24",
+    "esp:D35": "M131.0 313.38 L68 313.38 L68 615 L909.2834 615 L909.2834 459.24",
+    "esp:D34": "M131.0 291.82 L47 291.82 L47 660 L936.1667 660 L936.1667 459.24",
+    "esp:D18": "M342.86 354.74 L620 354.74 L620 705 L963.0501 705 L963.0501 459.24",
+    "esp:GND.1": "M342.86 502.8 L700 502.8 L700 744 L989.9334 744 L989.9334 459.24"
+  },
+  "note": "3.3V only. Wokwi VCC/HORZ/VERT/SEL/GND map to printed +5V/VRX/VRY/SW/GND on the specified SunFounder module. GPIO18 internal pull-up."
+}
