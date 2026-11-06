@@ -1,0 +1,100 @@
+{
+  "version": 1,
+  "author": "CODEPLANT",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "id": "esp",
+      "type": "wokwi-esp32-devkit-v1",
+      "left": 560,
+      "top": 120,
+      "scale": 2.5,
+      "attrs": {},
+      "pins": {
+        "D18": [
+          101.3,
+          81.7
+        ],
+        "D19": [
+          101.3,
+          72.2
+        ],
+        "D21": [
+          101.3,
+          62.9
+        ],
+        "3V3": [
+          101.3,
+          158.5
+        ],
+        "GND.1": [
+          101.3,
+          149
+        ]
+      }
+    },
+    {
+      "id": "enc",
+      "type": "wokwi-ky-040",
+      "left": 60,
+      "top": 120,
+      "scale": 2.6,
+      "attrs": {},
+      "pins": {
+        "CLK": [
+          116,
+          7.9
+        ],
+        "DT": [
+          116,
+          17.4
+        ],
+        "SW": [
+          116,
+          27
+        ],
+        "VCC": [
+          116,
+          36.3
+        ],
+        "GND": [
+          116,
+          45.5
+        ]
+      }
+    }
+  ],
+  "connections": [
+    [
+      "esp:D18",
+      "enc:CLK",
+      "yellow",
+      []
+    ],
+    [
+      "esp:D19",
+      "enc:DT",
+      "blue",
+      []
+    ],
+    [
+      "esp:D21",
+      "enc:SW",
+      "green",
+      []
+    ],
+    [
+      "esp:3V3",
+      "enc:VCC",
+      "red",
+      []
+    ],
+    [
+      "esp:GND.1",
+      "enc:GND",
+      "black",
+      []
+    ]
+  ],
+  "dependencies": {}
+}
