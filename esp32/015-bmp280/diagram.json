@@ -1,0 +1,99 @@
+{
+  "version": 1,
+  "author": "CODEPLANT",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "id": "esp",
+      "type": "wokwi-esp32-devkit-v1",
+      "left": 560,
+      "top": 95,
+      "scale": 2.8,
+      "attrs": {},
+      "pins": {
+        "3V3": [
+          101.3,
+          158.5
+        ],
+        "GND.1": [
+          101.3,
+          149
+        ],
+        "D21": [
+          101.3,
+          62.9
+        ],
+        "D22": [
+          101.3,
+          34
+        ]
+      }
+    },
+    {
+      "id": "bmp",
+      "type": "adafruit-bmp280-2651-stemma-qt",
+      "left": 55,
+      "top": 145,
+      "scale": 5,
+      "attrs": {},
+      "pins": {
+        "VIN": [
+          17.3725,
+          43.2
+        ],
+        "3Vo": [
+          24.5725,
+          43.2
+        ],
+        "GND": [
+          31.7725,
+          43.2
+        ],
+        "SCK": [
+          38.9725,
+          43.2
+        ],
+        "SDO": [
+          46.1725,
+          43.2
+        ],
+        "SDI": [
+          53.3725,
+          43.2
+        ],
+        "CS": [
+          60.5725,
+          43.2
+        ]
+      }
+    }
+  ],
+  "connections": [
+    [
+      "esp:3V3",
+      "bmp:VIN",
+      "red",
+      []
+    ],
+    [
+      "esp:GND.1",
+      "bmp:GND",
+      "black",
+      []
+    ],
+    [
+      "esp:D21",
+      "bmp:SDI",
+      "blue",
+      []
+    ],
+    [
+      "esp:D22",
+      "bmp:SCK",
+      "yellow",
+      []
+    ]
+  ],
+  "dependencies": {},
+  "note": "Educational numbered wiring diagram with official Adafruit Fritzing SVG."
+}
