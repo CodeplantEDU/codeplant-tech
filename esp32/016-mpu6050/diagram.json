@@ -1,0 +1,108 @@
+{
+  "version": 1,
+  "author": "CODEPLANT",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "id": "esp",
+      "type": "wokwi-esp32-devkit-v1",
+      "left": 590,
+      "top": 125,
+      "scale": 2.6,
+      "attrs": {},
+      "pins": {
+        "3V3": [
+          101.3,
+          158.5
+        ],
+        "GND.1": [
+          101.3,
+          149
+        ],
+        "D21": [
+          101.3,
+          62.9
+        ],
+        "D22": [
+          101.3,
+          34
+        ]
+      }
+    },
+    {
+      "id": "mpu",
+      "type": "wokwi-mpu6050",
+      "left": 50,
+      "top": 175,
+      "scale": 4,
+      "pins": {
+        "INT": [
+          7.28,
+          5.78
+        ],
+        "AD0": [
+          16.9,
+          5.78
+        ],
+        "XCL": [
+          26.4,
+          5.78
+        ],
+        "XDA": [
+          36.0,
+          5.78
+        ],
+        "SDA": [
+          45.6,
+          5.78
+        ],
+        "SCL": [
+          55.2,
+          5.78
+        ],
+        "GND": [
+          64.8,
+          5.78
+        ],
+        "VCC": [
+          74.4,
+          5.78
+        ]
+      },
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [
+      "esp:3V3",
+      "mpu:VCC",
+      "red",
+      []
+    ],
+    [
+      "esp:GND.1",
+      "mpu:GND",
+      "black",
+      []
+    ],
+    [
+      "esp:D21",
+      "mpu:SDA",
+      "blue",
+      []
+    ],
+    [
+      "esp:D22",
+      "mpu:SCL",
+      "yellow",
+      []
+    ],
+    [
+      "mpu:AD0",
+      "mpu:GND",
+      "black",
+      []
+    ]
+  ],
+  "dependencies": {}
+}
