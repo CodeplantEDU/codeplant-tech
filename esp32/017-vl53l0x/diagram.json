@@ -1,0 +1,103 @@
+{
+  "version": 1,
+  "author": "CODEPLANT",
+  "editor": "educational-preview",
+  "parts": [
+    {
+      "id": "esp",
+      "type": "wokwi-esp32-devkit-v1",
+      "left": 560,
+      "top": 95,
+      "scale": 2.8,
+      "attrs": {},
+      "pins": {
+        "3V3": [
+          101.3,
+          158.5
+        ],
+        "GND.1": [
+          101.3,
+          149
+        ],
+        "D21": [
+          101.3,
+          62.9
+        ],
+        "D22": [
+          101.3,
+          34
+        ]
+      }
+    },
+    {
+      "id": "tof",
+      "type": "adafruit-vl53l0x-3317-stemma-qt",
+      "left": 45,
+      "top": 145,
+      "scale": 5,
+      "attrs": {},
+      "pins": {
+        "VIN": [
+          20.6009,
+          43.2
+        ],
+        "GND": [
+          27.8009,
+          43.2
+        ],
+        "SCL": [
+          35.0009,
+          43.2
+        ],
+        "SDA": [
+          42.2009,
+          43.2
+        ],
+        "GPIO": [
+          49.4009,
+          43.2
+        ],
+        "XSHUT": [
+          56.6009,
+          43.2
+        ]
+      },
+      "pinIds": {
+        "VIN": 29,
+        "GND": 30,
+        "SCL": 31,
+        "SDA": 32,
+        "GPIO": 33,
+        "XSHUT": 34
+      }
+    }
+  ],
+  "connections": [
+    [
+      "esp:3V3",
+      "tof:VIN",
+      "red",
+      []
+    ],
+    [
+      "esp:GND.1",
+      "tof:GND",
+      "black",
+      []
+    ],
+    [
+      "esp:D21",
+      "tof:SDA",
+      "blue",
+      []
+    ],
+    [
+      "esp:D22",
+      "tof:SCL",
+      "yellow",
+      []
+    ]
+  ],
+  "dependencies": {},
+  "note": "Official Adafruit SVG with numbered connection pairs, CC BY-SA 3.0."
+}

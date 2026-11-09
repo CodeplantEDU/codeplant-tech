@@ -1,0 +1,3 @@
+MicroPython_VL53L0X by kapetan, MIT, commit 1cb1518e44f92c4b4b7942239018b1a8f304063c
+Install as /vl53l0x.py on the ESP32 filesystem:
+https://raw.githubusercontent.com/kapetan/MicroPython_VL53L0X/1cb1518e44f92c4b4b7942239018b1a8f304063c/vl53l0x.py
