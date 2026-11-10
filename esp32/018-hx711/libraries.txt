@@ -1,0 +1,4 @@
+MicroPython builtins: machine, time, math
+Save as hx711_spi.py on ESP32:
+https://raw.githubusercontent.com/robert-hh/hx711/a5502c9400b72cc79c4343eb082a153f1ae2f3a5/hx711_spi.py
+MIT license retained in upstream file.

@@ -1,0 +1,191 @@
+{
+  "version": 1,
+  "author": "CODEPLANT",
+  "editor": "educational-preview",
+  "parts": [
+    {
+      "id": "esp",
+      "type": "wokwi-esp32-devkit-v1",
+      "left": 550,
+      "top": 70,
+      "scale": 2.4,
+      "pins": {
+        "3V3": [
+          101.3,
+          158.5
+        ],
+        "GND.1": [
+          101.3,
+          149
+        ],
+        "D19": [
+          101.3,
+          72.2
+        ],
+        "D23": [
+          101.3,
+          24
+        ],
+        "D18": [
+          101.3,
+          81.7
+        ]
+      }
+    },
+    {
+      "id": "hx",
+      "left": 55,
+      "top": 120,
+      "scale": 4.2,
+      "pins": {
+        "VDD": [
+          82.800003,
+          18.0
+        ],
+        "VCC": [
+          82.800003,
+          25.200001
+        ],
+        "DAT": [
+          82.800003,
+          32.400002
+        ],
+        "SCK": [
+          82.800003,
+          39.599998
+        ],
+        "GND": [
+          82.800003,
+          46.799999
+        ],
+        "B+": [
+          61.200001,
+          39.599998
+        ],
+        "B-": [
+          61.200001,
+          46.799999
+        ],
+        "YLW": [
+          3.5999999,
+          46.799999
+        ],
+        "GRN": [
+          3.5999999,
+          39.599998
+        ],
+        "WHT": [
+          3.5999999,
+          32.400002
+        ],
+        "BLK": [
+          3.5999999,
+          25.200001
+        ],
+        "RED": [
+          3.5999999,
+          18.0
+        ]
+      },
+      "pinIds": {
+        "VDD": "connector16pin",
+        "VCC": "connector17pin",
+        "DAT": "connector18pin",
+        "SCK": "connector19pin",
+        "GND": "connector20pin",
+        "B+": "connector21pin",
+        "B-": "connector22pin",
+        "YLW": "connector23pin",
+        "GRN": "connector24pin",
+        "WHT": "connector25pin",
+        "BLK": "connector26pin",
+        "RED": "connector27pin"
+      },
+      "type": "custom-hx711-sen13879"
+    },
+    {
+      "id": "cell",
+      "model": "TAL220B 5kg SEN-14729",
+      "signals": {
+        "E+": "red",
+        "E-": "black",
+        "S+": "green",
+        "S-": "white"
+      }
+    },
+    {
+      "id": "supply",
+      "type": "regulated-dc-supply",
+      "voltage": 5
+    }
+  ],
+  "connections": [
+    [
+      "esp:3V3",
+      "hx:VDD",
+      "red",
+      []
+    ],
+    [
+      "supply:+5V",
+      "hx:VCC",
+      "red",
+      []
+    ],
+    [
+      "esp:D19",
+      "hx:DAT",
+      "yellow",
+      []
+    ],
+    [
+      "esp:D23",
+      "hx:SCK",
+      "blue",
+      []
+    ],
+    [
+      "esp:GND.1",
+      "hx:GND",
+      "black",
+      []
+    ],
+    [
+      "supply:GND",
+      "hx:GND",
+      "black",
+      []
+    ],
+    [
+      "cell:E+",
+      "hx:RED",
+      "red",
+      []
+    ],
+    [
+      "cell:E-",
+      "hx:BLK",
+      "black",
+      []
+    ],
+    [
+      "cell:S+",
+      "hx:GRN",
+      "green",
+      []
+    ],
+    [
+      "cell:S-",
+      "hx:WHT",
+      "gray",
+      []
+    ]
+  ],
+  "unused": [
+    "esp:D18",
+    "hx:YLW",
+    "hx:B+",
+    "hx:B-"
+  ],
+  "note": "번호가 같은 단자를 연결하는 교육용 배선도. HX711은 Wokwi 실행 모델이 아닙니다. GPIO18은 SPI 내부 클록이며 외부 배선하지 않습니다."
+}
