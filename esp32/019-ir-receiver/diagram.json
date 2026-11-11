@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "editor": "educational-preview",
+  "executableSimulation": false,
+  "parts": [
+    {
+      "id": "esp",
+      "type": "wokwi-esp32-devkit-v1",
+      "left": 55,
+      "top": 110,
+      "scale": 2.65,
+      "pins": {
+        "D18": [
+          101.3,
+          81.7
+        ],
+        "GND.1": [
+          101.3,
+          149
+        ],
+        "3V3": [
+          101.3,
+          158.5
+        ]
+      }
+    },
+    {
+      "id": "ir",
+      "type": "physical-TSOP38238-front-photo",
+      "left": 450,
+      "top": 105,
+      "scale": 0.45,
+      "pins": {
+        "OUT": [
+          440,
+          638
+        ],
+        "GND": [
+          486,
+          638
+        ],
+        "VS": [
+          534,
+          638
+        ]
+      }
+    }
+  ],
+  "connections": [
+    [
+      "esp:D18",
+      "ir:OUT",
+      "yellow",
+      []
+    ],
+    [
+      "esp:GND.1",
+      "ir:GND",
+      "black",
+      []
+    ],
+    [
+      "esp:3V3",
+      "ir:VS",
+      "red",
+      []
+    ]
+  ]
+}

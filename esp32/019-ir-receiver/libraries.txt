@@ -1,0 +1,4 @@
+Peter Hinch micropython_ir (MIT)
+https://github.com/peterhinch/micropython_ir/tree/014231c2cb0358694bc9c713e87ce28655a24462/ir_rx
+Copy __init__.py and nec.py to /lib/ir_rx/ on ESP32.
+
