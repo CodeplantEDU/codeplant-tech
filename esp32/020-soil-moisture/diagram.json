@@ -1,0 +1,45 @@
+{
+  "kind": "physical-wiring-metadata",
+  "executableSimulation": false,
+  "connections": [
+    [
+      "esp32:D34",
+      "soil:Signal"
+    ],
+    [
+      "esp32:3V3",
+      "soil:VCC"
+    ],
+    [
+      "esp32:GND.1",
+      "soil:GND"
+    ]
+  ],
+  "pins": {
+    "esp32:D34": [
+      142.5,
+      269.3
+    ],
+    "esp32:3V3": [
+      431.4,
+      585.5
+    ],
+    "esp32:GND.1": [
+      431.4,
+      557
+    ],
+    "soil:Signal": [
+      658,
+      288.8
+    ],
+    "soil:VCC": [
+      658,
+      300
+    ],
+    "soil:GND": [
+      658,
+      311.2
+    ]
+  },
+  "sourceImage": "manufacturer-wiring.png"
+}
