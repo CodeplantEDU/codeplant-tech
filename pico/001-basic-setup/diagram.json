@@ -1,0 +1,12 @@
+{
+  "kind": "usb-connection",
+  "board": "Raspberry Pi Pico (RP2040)",
+  "connections": [
+    [
+      "computer:USB",
+      "pico:Micro-USB"
+    ]
+  ],
+  "onboardLed": "GP25",
+  "externalWiring": false
+}
