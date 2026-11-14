@@ -45,5 +45,6 @@ Arduino UNO, ESP32 MicroPython, Raspberry Pi Pico 예제를 한 저장소에서 
 | esp32 | 19 · 리모컨 신호를 읽는 적외선 수신기 | [예제 보기](esp32/019-ir-receiver/) |
 | esp32 | 20 · 흙의 변화를 읽는 수분 센서 | [예제 보기](esp32/020-soil-moisture/) |
 | pico | 01 · Raspberry Pi Pico에 MicroPython 설치하고 첫 코드 실행하기 | [예제 보기](pico/001-basic-setup/) |
+| pico | 02 · Pico의 입력과 출력 | [예제 보기](pico/002-signal-processing/) |
 
 제작 순서: 기본 세팅 → 신호처리 → 아날로그센서 → 디지털센서 → 서보모터 → DC모터 → 기타 센서류. 실습별 검증 범위와 자료 출처는 각 폴더의 README를 확인하세요.

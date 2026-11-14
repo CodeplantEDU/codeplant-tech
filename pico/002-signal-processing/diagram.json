@@ -1,0 +1,19 @@
+{
+  "kind": "schematic",
+  "board": "Raspberry Pi Pico (RP2040)",
+  "connections": [
+    [
+      "pico:36 3V3(OUT)",
+      "pot:outer1"
+    ],
+    [
+      "pico:31 GP26",
+      "pot:wiper"
+    ],
+    [
+      "pico:33 AGND",
+      "pot:outer2"
+    ]
+  ],
+  "onboardLed": "GP25"
+}
