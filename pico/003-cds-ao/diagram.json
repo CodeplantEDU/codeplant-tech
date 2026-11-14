@@ -1,0 +1,21 @@
+{
+  "kind": "physical-wiring-metadata",
+  "executableSimulation": false,
+  "connections": [
+    [
+      "Pico 36 · 3V3(OUT)",
+      "VCC"
+    ],
+    [
+      "Pico 33 · AGND",
+      "GND"
+    ],
+    [
+      "Pico 31 · GP26",
+      "AO"
+    ]
+  ],
+  "unconnected": [
+    "DO"
+  ]
+}
