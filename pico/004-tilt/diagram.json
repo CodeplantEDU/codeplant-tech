@@ -1,0 +1,84 @@
+{
+  "version": 1,
+  "note": "실제 연결 2개, 물리 핀 번호 병기. 회로 SVG는 circuit_preview.html.",
+  "parts": [
+    {
+      "id": "pico",
+      "type": "Raspberry Pi Pico",
+      "pins": {
+        "GP15": [
+          386,
+          315
+        ],
+        "GND": [
+          386,
+          195
+        ]
+      },
+      "source": "https://datasheets.raspberrypi.com/pico/Pico-R3-A4-Pinout.pdf"
+    },
+    {
+      "id": "tilt",
+      "type": "two-pin-ball-switch",
+      "pins": {
+        "1": [
+          805,
+          254
+        ],
+        "2": [
+          707,
+          254
+        ]
+      },
+      "source": "https://www.adafruit.com/product/173"
+    }
+  ],
+  "connections": [
+    [
+      "pico:GP15",
+      "tilt:1",
+      "blue",
+      [
+        [
+          386,
+          315
+        ],
+        [
+          865,
+          315
+        ],
+        [
+          865,
+          254
+        ],
+        [
+          805,
+          254
+        ]
+      ]
+    ],
+    [
+      "pico:GND",
+      "tilt:2",
+      "black",
+      [
+        [
+          386,
+          195
+        ],
+        [
+          675,
+          195
+        ],
+        [
+          675,
+          254
+        ],
+        [
+          707,
+          254
+        ]
+      ]
+    ]
+  ]
+}
