@@ -48,5 +48,6 @@ Arduino UNO, ESP32 MicroPython, Raspberry Pi Pico 예제를 한 저장소에서 
 | pico | 02 · Pico의 입력과 출력 | [예제 보기](pico/002-signal-processing/) |
 | pico | 03 · 빛의 변화를 읽는 조도센서 | [예제 보기](pico/003-cds-ao/) |
 | pico | 04 · 2핀 볼 스위치로 기울기 감지하기 | [예제 보기](pico/004-tilt/) |
+| pico | 05 · 펄스 폭으로 위치를 명령하는 서보모터 | [예제 보기](pico/005-servo-motor/) |
 
 제작 순서: 기본 세팅 → 신호처리 → 아날로그센서 → 디지털센서 → 서보모터 → DC모터 → 기타 센서류. 실습별 검증 범위와 자료 출처는 각 폴더의 README를 확인하세요.
