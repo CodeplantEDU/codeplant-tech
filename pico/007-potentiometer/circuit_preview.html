@@ -1,0 +1,16 @@
+<!doctype html><html lang="ko"><meta charset="utf-8"><title>Pico + 10kΩ 가변저항 배선</title>
+<script type="module" src="https://unpkg.com/@wokwi/elements@1.9.2/dist/wokwi-elements.bundle.js"></script>
+<style>@font-face{font-family:Pretendard;src:url(/assets/Pretendard-Regular.ttf)}*{box-sizing:border-box}body{margin:0;font-family:Pretendard,"Malgun Gothic",sans-serif}.canvas{position:relative;width:1200px;height:760px;overflow:hidden;background:#DFEAFF}h1{position:absolute;left:45px;top:25px;margin:0;font-size:30px;color:#315DAB}.board{position:absolute;left:250px;top:170px;transform:scale(1.8);transform-origin:top left}.pot{position:absolute;left:810px;top:230px;transform:scale(3.5);transform-origin:top left}.wires{position:absolute;inset:0;width:1200px;height:760px;pointer-events:none}.wire{fill:none;stroke-width:7;stroke-linejoin:round;stroke-linecap:round}.label{position:absolute;font-size:23px;padding:7px 12px;border:1px solid #d5dfed;background:#fff;border-radius:8px;line-height:1.5}.note{position:absolute;left:45px;right:45px;bottom:55px;font-size:23px;line-height:1.5;color:#253847}.source{position:absolute;left:45px;bottom:20px;font-size:13px;color:#607281}</style>
+<main class="canvas" aria-label="Pico 3V3와 AGND, GP26를 가변저항 양끝과 가운데 다리에 연결">
+<h1>Raspberry Pi Pico + 3핀 가변저항 (10kΩ)</h1>
+<div class="label" style="left:45px;top:73px">USB를 빼고 연결 · 가운데 다리는 GP26 · 양끝은 3V3와 GND</div>
+
+<wokwi-potentiometer class="pot" value="512"></wokwi-potentiometer>
+<svg class="wires" viewBox="0 0 1200 760"><rect x="190" y="175" width="242" height="270" rx="12" fill="#F4F7FF" stroke="#315DAB" stroke-width="3"/><g font-size="24" fill="#253847"><text x="210" y="215">Pico · 핀 연결 기호</text><text x="210" y="255">36 · 3V3(OUT)</text><text x="210" y="335">33 · AGND</text><text x="210" y="395">31 · GP26</text></g><path data-net="pico:3V3" class="wire" stroke="#e31c23" d="M432 250 H600 V590 H981.5 V469.75"/><circle cx="432" cy="250" r="5" fill="#e31c23" stroke="white" stroke-width="2"/><circle cx="981.5" cy="469.75" r="5" fill="#e31c23" stroke="white" stroke-width="2"/><path data-net="pico:AGND" class="wire" stroke="#151515" d="M432 330 H730 V510 H911.5 V469.75"/><circle cx="432" cy="330" r="5" fill="#151515" stroke="white" stroke-width="2"/><circle cx="911.5" cy="469.75" r="5" fill="#151515" stroke="white" stroke-width="2"/><path data-net="pico:GP26" class="wire" stroke="#cba900" d="M432 390 H700 V570 H946.5 V469.75"/><circle cx="432" cy="390" r="5" fill="#cba900" stroke="white" stroke-width="2"/><circle cx="946.5" cy="469.75" r="5" fill="#cba900" stroke="white" stroke-width="2"/></svg>
+
+<div class="label" style="left:785px;top:175px">가변저항 · 설명용 Wokwi 도형</div>
+<div class="label" style="left:470px;top:530px;color:#b72727">3V3 → 양끝 한쪽</div>
+
+<div class="note">빨강: 3V3 / 검정: AGND / 노랑: GP26 입력<br>Pico 핀 번호는 USB를 위로 둔 공식 핀맵 기준 · 실물은 가운데 접점과 양끝을 구분</div>
+<div class="source">Pico: 핀 연결 기호 / 가변저항: Wokwi 공식 도형. 실제 제품 사진은 표지 참고.</div>
+</main></html>

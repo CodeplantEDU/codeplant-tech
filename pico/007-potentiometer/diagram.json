@@ -1,0 +1,79 @@
+{
+  "version": 1,
+  "editor": "codeplant",
+  "parts": [
+    {
+      "id": "pico",
+      "type": "custom-pico-analog-pins",
+      "left": 0,
+      "top": 0,
+      "scale": 1,
+      "pins": {
+        "3V3": [
+          432,
+          250
+        ],
+        "AGND": [
+          432,
+          330
+        ],
+        "GP26": [
+          432,
+          390
+        ]
+      },
+      "physicalPins": {
+        "3V3": 36,
+        "AGND": 33,
+        "GP26": 31
+      }
+    },
+    {
+      "id": "pot",
+      "type": "wokwi-potentiometer",
+      "left": 810,
+      "top": 230,
+      "scale": 3.5,
+      "pins": {
+        "GND": [
+          29,
+          68.5
+        ],
+        "SIG": [
+          39,
+          68.5
+        ],
+        "VCC": [
+          49,
+          68.5
+        ]
+      }
+    }
+  ],
+  "connections": [
+    [
+      "pico:3V3",
+      "pot:VCC",
+      "red",
+      []
+    ],
+    [
+      "pico:AGND",
+      "pot:GND",
+      "black",
+      []
+    ],
+    [
+      "pico:GP26",
+      "pot:SIG",
+      "yellow",
+      []
+    ]
+  ],
+  "previewRoutes": {
+    "pico:3V3": "M432 250 H600 V590 H981.5 V469.75",
+    "pico:AGND": "M432 330 H730 V510 H911.5 V469.75",
+    "pico:GP26": "M432 390 H700 V570 H946.5 V469.75"
+  },
+  "simulationSupported": false
+}
