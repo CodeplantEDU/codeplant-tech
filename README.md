@@ -52,5 +52,6 @@ Arduino UNO, ESP32 MicroPython, Raspberry Pi Pico 예제를 한 저장소에서 
 | pico | 06 · 드라이버로 방향과 출력을 바꾸는 DC모터 | [예제 보기](pico/006-dc-motor/) |
 | pico | 07 · 손잡이로 입력 전압을 바꾸는 가변저항 | [예제 보기](pico/007-potentiometer/) |
 | pico | 08 · DHT22로 온도와 습도 읽기 | [예제 보기](pico/008-dht22/) |
+| pico | 09 · 초음파로 거리를 읽는 HC-SR04 | [예제 보기](pico/009-hc-sr04/) |
 
 제작 순서: 기본 세팅 → 신호처리 → 아날로그센서 → 디지털센서 → 서보모터 → DC모터 → 기타 센서류. 실습별 검증 범위와 자료 출처는 각 폴더의 README를 확인하세요.

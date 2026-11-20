@@ -1,0 +1,149 @@
+{
+  "version": 1,
+  "author": "CODEPLANT",
+  "parts": [
+    {
+      "id": "pico",
+      "type": "custom-pico-pin-symbol",
+      "pins": {
+        "VBUS": [
+          370,
+          350
+        ],
+        "GP16": [
+          370,
+          420
+        ],
+        "GP17": [
+          370,
+          490
+        ],
+        "GND": [
+          370,
+          560
+        ]
+      },
+      "physicalPins": {
+        "VBUS": 40,
+        "GP16": 21,
+        "GP17": 22,
+        "GND": 38
+      }
+    },
+    {
+      "id": "sonar",
+      "type": "wokwi-hc-sr04",
+      "left": 700,
+      "top": 80,
+      "scale": 2,
+      "pins": {
+        "VCC": [
+          71.3,
+          94.5
+        ],
+        "TRIG": [
+          81.3,
+          94.5
+        ],
+        "ECHO": [
+          91.3,
+          94.5
+        ],
+        "GND": [
+          101.3,
+          94.5
+        ]
+      }
+    },
+    {
+      "id": "r1",
+      "type": "resistor",
+      "attrs": {
+        "value": "10000"
+      },
+      "pins": {
+        "1": [
+          950,
+          360
+        ],
+        "2": [
+          950,
+          430
+        ]
+      }
+    },
+    {
+      "id": "r2",
+      "type": "resistor",
+      "attrs": {
+        "value": "10000"
+      },
+      "pins": {
+        "1": [
+          950,
+          490
+        ],
+        "2": [
+          950,
+          560
+        ]
+      }
+    }
+  ],
+  "connections": [
+    [
+      "pico:VBUS",
+      "sonar:VCC",
+      "red",
+      []
+    ],
+    [
+      "pico:GP16",
+      "sonar:TRIG",
+      "yellow",
+      []
+    ],
+    [
+      "sonar:ECHO",
+      "r1:1",
+      "yellow",
+      []
+    ],
+    [
+      "r1:2",
+      "r2:1",
+      "yellow",
+      []
+    ],
+    [
+      "pico:GP17",
+      "r2:1",
+      "yellow",
+      []
+    ],
+    [
+      "r2:2",
+      "pico:GND",
+      "black",
+      []
+    ],
+    [
+      "sonar:GND",
+      "r2:2",
+      "black",
+      []
+    ]
+  ],
+  "previewRoutes": {
+    "pico:VBUS": "M370 350 H450 V70 H650 V286 H842.6 V269",
+    "pico:GP16": "M370 420 H600 V330 H862.6 V269",
+    "sonar:ECHO": "M882.6 269 V350 H950 V360",
+    "r1:2": "M950 430 V490",
+    "pico:GP17": "M370 490 H950",
+    "r2:2": "M950 560 H370",
+    "sonar:GND": "M902.6 269 V310 H1080 V560 H950"
+  },
+  "dependencies": {},
+  "note": "Educational drawing metadata, Pico functional symbol not physical board drawing. Not simulator-tested. USB-only 5V; two 10k resistors give nominal 2.5V Echo.",
+  "editor": "wokwi"
+}
