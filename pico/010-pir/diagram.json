@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "author": "CODEPLANT",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "id": "pico",
+      "type": "custom-pico-pin-symbol",
+      "pins": {
+        "VBUS": [
+          450,
+          310
+        ],
+        "GP16": [
+          450,
+          390
+        ],
+        "GND": [
+          450,
+          470
+        ]
+      },
+      "physicalPins": {
+        "VBUS": 40,
+        "GP16": 21,
+        "GND": 38
+      }
+    },
+    {
+      "id": "pir",
+      "type": "wokwi-pir-motion-sensor",
+      "left": 720,
+      "top": 120,
+      "scale": 3.2,
+      "pins": {
+        "VCC": [
+          36.178,
+          92
+        ],
+        "OUT": [
+          45.9175,
+          92
+        ],
+        "GND": [
+          55.6415,
+          92
+        ]
+      }
+    }
+  ],
+  "connections": [
+    [
+      "pico:VBUS",
+      "pir:VCC",
+      "red",
+      []
+    ],
+    [
+      "pico:GP16",
+      "pir:OUT",
+      "yellow",
+      []
+    ],
+    [
+      "pico:GND",
+      "pir:GND",
+      "black",
+      []
+    ]
+  ],
+  "previewRoutes": {
+    "pico:VBUS": "M450 310 H550 V80 H680 V460 H835.7696 V414.4",
+    "pico:GP16": "M450 390 H600 V500 H866.936 V414.4",
+    "pico:GND": "M450 470 H520 V560 H898.0528 V414.4"
+  },
+  "dependencies": {},
+  "note": "Pico functional symbol, not physical board layout. SunFounder HC-SR501 USB 5V VBUS and 3.3V OUT input GP16, common GND. No external supply. Drawing metadata, not simulator-tested."
+}
