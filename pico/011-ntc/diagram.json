@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "author": "CODEPLANT",
+  "editor": "codeplant",
+  "parts": [
+    {
+      "id": "pico",
+      "type": "board-functional-symbol",
+      "model": "RP2040 Pico",
+      "physicalPins": {
+        "3V3": 36,
+        "GP26": 31,
+        "AGND": 33
+      }
+    },
+    {
+      "id": "r1",
+      "type": "resistor",
+      "attrs": {
+        "value": "10000"
+      }
+    },
+    {
+      "id": "ntc",
+      "type": "thermistor-2-wire",
+      "model": "Adafruit 372",
+      "attrs": {
+        "R25": "10000",
+        "B25/50": "3950"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "pico:3V3",
+      "r1:1",
+      "red",
+      []
+    ],
+    [
+      "r1:2",
+      "ntc:1",
+      "yellow",
+      []
+    ],
+    [
+      "pico:GP26",
+      "ntc:1",
+      "yellow",
+      []
+    ],
+    [
+      "pico:AGND",
+      "ntc:2",
+      "black",
+      []
+    ]
+  ],
+  "power": "USB only; VBUS/VSYS unused"
+}
