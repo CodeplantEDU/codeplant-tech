@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "editor": "codeplant",
+  "parts": [
+    {
+      "id": "pico",
+      "type": "board-functional-symbol",
+      "physicalPins": {
+        "3V3": 36,
+        "GP16": 21,
+        "GND": 38
+      }
+    },
+    {
+      "id": "temp",
+      "type": "ds18b20",
+      "pins": {
+        "GND": [
+          1.46,
+          13
+        ],
+        "DQ": [
+          4,
+          13
+        ],
+        "VCC": [
+          6.54,
+          13
+        ]
+      }
+    },
+    {
+      "id": "r1",
+      "type": "resistor",
+      "attrs": {
+        "value": "4700"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "pico:3V3",
+      "temp:VCC",
+      "red",
+      []
+    ],
+    [
+      "pico:GND",
+      "temp:GND",
+      "black",
+      []
+    ],
+    [
+      "pico:GP16",
+      "temp:DQ",
+      "yellow",
+      []
+    ],
+    [
+      "r1:1",
+      "temp:DQ",
+      "yellow",
+      []
+    ],
+    [
+      "r1:2",
+      "temp:VCC",
+      "red",
+      []
+    ]
+  ]
+}
