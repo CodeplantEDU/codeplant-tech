@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "editor": "codeplant",
+  "parts": [
+    {
+      "id": "pico",
+      "type": "board-functional-symbol",
+      "physicalPins": {
+        "3V3": 36,
+        "GP26": 31,
+        "GP27": 32,
+        "GP16": 21,
+        "GND": 38
+      }
+    },
+    {
+      "id": "joy",
+      "type": "joystick-functional-symbol",
+      "model": "SunFounder VRX/VRY/SW"
+    },
+    {
+      "id": "r1",
+      "type": "resistor",
+      "attrs": {
+        "value": "10000"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "pico:3V3",
+      "joy:VCC",
+      "red",
+      []
+    ],
+    [
+      "pico:GP26",
+      "joy:VRX",
+      "yellow",
+      []
+    ],
+    [
+      "pico:GP27",
+      "joy:VRY",
+      "yellow",
+      []
+    ],
+    [
+      "pico:GP16",
+      "joy:SW",
+      "yellow",
+      []
+    ],
+    [
+      "pico:GND",
+      "joy:GND",
+      "black",
+      []
+    ],
+    [
+      "r1:1",
+      "joy:VCC",
+      "red",
+      []
+    ],
+    [
+      "r1:2",
+      "joy:SW",
+      "yellow",
+      []
+    ]
+  ]
+}
