@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "editor": "codeplant",
+  "author": "CODEPLANT",
+  "parts": [
+    {
+      "id": "pico",
+      "type": "board-functional-symbol",
+      "model": "Raspberry Pi Pico RP2040",
+      "physicalPins": {
+        "GP18": 24,
+        "GP19": 25,
+        "GP20": 26,
+        "3V3": 36,
+        "GND": 38
+      }
+    },
+    {
+      "id": "enc",
+      "type": "rotary-encoder-functional-symbol",
+      "model": "SunFounder HW-040"
+    }
+  ],
+  "connections": [
+    [
+      "pico:GP18",
+      "enc:CLK",
+      "#986109",
+      []
+    ],
+    [
+      "pico:GP19",
+      "enc:DT",
+      "#315DAB",
+      []
+    ],
+    [
+      "pico:GP20",
+      "enc:SW",
+      "#147058",
+      []
+    ],
+    [
+      "pico:3V3",
+      "enc:VCC",
+      "#B62739",
+      []
+    ],
+    [
+      "pico:GND",
+      "enc:GND",
+      "#29374B",
+      []
+    ]
+  ]
+}
