@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "editor": "codeplant",
+  "author": "CODEPLANT",
+  "parts": [
+    {
+      "id": "pico",
+      "type": "board-functional-symbol",
+      "model": "Raspberry Pi Pico (RP2040)",
+      "physicalPins": {
+        "3V3": 36,
+        "GND": 8,
+        "GP4": 6,
+        "GP5": 7
+      }
+    },
+    {
+      "id": "bmp",
+      "type": "breakout-functional-symbol",
+      "model": "Adafruit #2651 BMP280 STEMMA QT"
+    }
+  ],
+  "connections": [
+    [
+      "pico:3V3",
+      "bmp:VIN",
+      "#B82F42",
+      []
+    ],
+    [
+      "pico:GND",
+      "bmp:GND",
+      "#2B394D",
+      []
+    ],
+    [
+      "pico:GP4",
+      "bmp:SDI",
+      "#315DAB",
+      []
+    ],
+    [
+      "pico:GP5",
+      "bmp:SCK",
+      "#176F59",
+      []
+    ]
+  ]
+}

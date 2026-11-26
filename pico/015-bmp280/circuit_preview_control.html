@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>I²C에서 SDA와 SCL의 역할</title>
+<style>
+@font-face{font-family:Pretendard;src:url('/assets/Pretendard-Regular.ttf')}
+body{margin:0;background:#DFEAFF}.canvas{width:1200px;height:760px}svg{display:block}text{font-family:Pretendard,'Malgun Gothic',sans-serif;fill:#243249}
+</style></head><body><main class="canvas">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+<title id="title">I²C에서 SDA와 SCL의 역할</title><desc id="desc">GP4 SDA는 양방향 데이터, GP5 SCL은 Pico가 만드는 통신 박자. 100 kHz 설정.</desc>
+<rect width="1200" height="760" fill="#DFEAFF"/><rect x="24" y="34" width="1152" height="687" rx="28" fill="#F7FAFF" stroke="#315DAB" stroke-width="3"/>
+<defs><marker id="arrow" viewBox="0 0 12 12" markerWidth="6" markerHeight="6" refX="10" refY="6" orient="auto-start-reverse"><path d="M2 2L10 6L2 10" fill="none" stroke="context-stroke" stroke-width="2"/></marker></defs>
+<text x="70" y="110" font-size="40" font-weight="700">I²C 신호의 역할</text>
+<rect x="66" y="163" width="244" height="365" rx="20" fill="#DFEAFF"/>
+<rect x="890" y="163" width="244" height="365" rx="20" fill="#DFEAFF"/>
+<text x="187" y="221" text-anchor="middle" font-size="40" font-weight="700">Pico</text>
+<text x="1012" y="221" text-anchor="middle" font-size="39" font-weight="700">BMP280</text>
+<path d="M315 309H885" fill="none" stroke="#315DAB" stroke-width="6" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+<text x="187" y="324" text-anchor="middle" font-size="35">GP4 / SDA</text>
+<text x="1012" y="324" text-anchor="middle" font-size="35">SDI</text>
+<text x="600" y="279" text-anchor="middle" font-size="37">주소·요청·측정값</text>
+<path d="M315 441H885" fill="none" stroke="#176F59" stroke-width="6" marker-end="url(#arrow)"/>
+<text x="187" y="456" text-anchor="middle" font-size="35">GP5 / SCL</text>
+<text x="1012" y="456" text-anchor="middle" font-size="35">SCK</text>
+<text x="600" y="411" text-anchor="middle" font-size="37">데이터를 읽는 박자</text>
+<text x="66" y="612" font-size="33">예제는 I²C 버스를 100 kHz로 설정합니다.</text>
+<text x="66" y="663" font-size="30">신호 역할을 설명한 그림 · 전체 배선은 앞 장에서 확인</text>
+</svg></main></body></html>

@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>Pico와 BMP280의 I²C 배선</title>
+<style>
+@font-face{font-family:Pretendard;src:url('/assets/Pretendard-Regular.ttf')}
+body{margin:0;background:#DFEAFF}.canvas{width:1200px;height:760px}svg{display:block}text{font-family:Pretendard,'Malgun Gothic',sans-serif;fill:#243249}
+</style></head><body><main class="canvas">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+<title id="title">Pico와 BMP280의 I²C 배선</title><desc id="desc">3V3 OUT 36번과 VIN, GND 8번과 GND, GP4 6번과 SDI, GP5 7번과 SCK</desc>
+<rect width="1200" height="760" fill="#DFEAFF"/><rect x="24" y="34" width="1152" height="687" rx="28" fill="#F7FAFF" stroke="#315DAB" stroke-width="3"/>
+<rect x="66" y="111" width="380" height="498" rx="20" fill="#DFEAFF"/>
+<rect x="798" y="111" width="336" height="498" rx="20" fill="#DFEAFF"/>
+<text x="93" y="177" font-size="39" font-weight="700">Raspberry Pi Pico</text>
+<text x="830" y="177" font-size="38" font-weight="700">Adafruit #2651</text>
+<g data-net="pico:3V3 bmp:VIN"><text x="93" y="263" font-size="38">3V3 OUT · 물리 36</text><path d="M446 250H798" fill="none" stroke="#B82F42" stroke-width="7"/><circle cx="446" cy="250" r="7" fill="#B82F42"/><circle cx="798" cy="250" r="7" fill="#B82F42"/><text x="830" y="263" font-size="39">VIN</text></g>
+<g data-net="pico:GND bmp:GND"><text x="93" y="365" font-size="38">GND · 물리 8</text><path d="M446 352H798" fill="none" stroke="#2B394D" stroke-width="7"/><circle cx="446" cy="352" r="7" fill="#2B394D"/><circle cx="798" cy="352" r="7" fill="#2B394D"/><text x="830" y="365" font-size="39">GND</text></g>
+<g data-net="pico:GP4 bmp:SDI"><text x="93" y="467" font-size="38">GP4 · 물리 6</text><path d="M446 454H798" fill="none" stroke="#315DAB" stroke-width="7"/><circle cx="446" cy="454" r="7" fill="#315DAB"/><circle cx="798" cy="454" r="7" fill="#315DAB"/><text x="830" y="467" font-size="39">SDI</text></g>
+<g data-net="pico:GP5 bmp:SCK"><text x="93" y="569" font-size="38">GP5 · 물리 7</text><path d="M446 556H798" fill="none" stroke="#176F59" stroke-width="7"/><circle cx="446" cy="556" r="7" fill="#176F59"/><circle cx="798" cy="556" r="7" fill="#176F59"/><text x="830" y="569" font-size="39">SCK</text></g>
+<text x="70" y="677" font-size="31">기능 배선도 · 물리 번호와 모듈에 적힌 핀 이름을 확인하세요.</text>
+</svg></main></body></html>
