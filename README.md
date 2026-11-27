@@ -59,5 +59,6 @@ Arduino UNO, ESP32 MicroPython, Raspberry Pi Pico 예제를 한 저장소에서 
 | pico | 13 · 조이스틱의 두 축과 누름 읽기 | [예제 보기](pico/013-joystick/) |
 | pico | 14 · 회전 방향을 읽는 로터리 인코더 | [예제 보기](pico/014-rotary-encoder/) |
 | pico | 15 · 공기의 압력과 온도를 읽는 BMP280 | [예제 보기](pico/015-bmp280/) |
+| pico | 16 · 기울기와 상대 회전을 읽는 MPU6050 | [예제 보기](pico/016-mpu6050/) |
 
 제작 순서: 기본 세팅 → 신호처리 → 아날로그센서 → 디지털센서 → 서보모터 → DC모터 → 기타 센서류. 실습별 검증 범위와 자료 출처는 각 폴더의 README를 확인하세요.

@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "editor": "codeplant",
+  "author": "CODEPLANT",
+  "parts": [
+    {
+      "id": "pico",
+      "type": "board-functional-symbol",
+      "model": "Raspberry Pi Pico (RP2040)",
+      "physicalPins": {
+        "3V3": 36,
+        "GND": 8,
+        "GP4": 6,
+        "GP5": 7
+      }
+    },
+    {
+      "id": "shifter",
+      "type": "logic-level-shifter-functional-symbol",
+      "model": "Adafruit BSS138 #757",
+      "logicReferences": {
+        "HV": 3.3,
+        "LV": 3.3
+      },
+      "internalGroundCommon": true
+    },
+    {
+      "id": "imu",
+      "type": "breakout-functional-symbol",
+      "model": "SunFounder GY-521 SF-0122"
+    }
+  ],
+  "connections": [
+    [
+      "pico:3V3",
+      "shifter:HV",
+      "red",
+      []
+    ],
+    [
+      "pico:3V3",
+      "shifter:LV",
+      "red",
+      []
+    ],
+    [
+      "pico:3V3",
+      "imu:VCC",
+      "red",
+      []
+    ],
+    [
+      "pico:GND",
+      "shifter:GND_B",
+      "black",
+      []
+    ],
+    [
+      "pico:GND",
+      "shifter:GND_A",
+      "black",
+      []
+    ],
+    [
+      "pico:GND",
+      "imu:GND",
+      "black",
+      []
+    ],
+    [
+      "imu:GND",
+      "imu:AD0",
+      "black",
+      []
+    ],
+    [
+      "pico:GP4",
+      "shifter:B1",
+      "blue",
+      []
+    ],
+    [
+      "shifter:A1",
+      "imu:SDA",
+      "blue",
+      []
+    ],
+    [
+      "pico:GP5",
+      "shifter:B2",
+      "green",
+      []
+    ],
+    [
+      "shifter:A2",
+      "imu:SCL",
+      "green",
+      []
+    ]
+  ]
+}

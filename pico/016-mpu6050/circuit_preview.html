@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>Pico와 GY-521 배선</title>
+<style>@font-face{font-family:Pretendard;src:url('/assets/Pretendard-Regular.ttf')}body{margin:0;background:#DFEAFF}.canvas{width:1200px;height:760px}svg{display:block}text{font-family:Pretendard,'Malgun Gothic',sans-serif;fill:#253247}</style></head>
+<body><main class="canvas"><svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" role="img" aria-labelledby="title desc">
+<title id="title">Pico · BSS138 · GY-521 기능 배선도</title><desc id="desc">Pico 3V3 OUT을 HV, LV, VCC에 분기합니다. 모든 GND와 AD0를 연결합니다. GP4는 B1에서 A1을 거쳐 SDA, GP5는 B2에서 A2를 거쳐 SCL로 이어집니다.</desc>
+<rect width="1200" height="760" fill="#DFEAFF"/><rect x="25" y="34" width="1150" height="687" rx="26" fill="#F7FAFF" stroke="#315DAB" stroke-width="3"/>
+<rect x="50" y="230" width="286" height="307" rx="20" fill="#DFEAFF"/>
+<rect x="433" y="230" width="334" height="307" rx="20" fill="#DFEAFF"/>
+<rect x="864" y="230" width="286" height="307" rx="20" fill="#DFEAFF"/>
+<text x="194" y="297" font-size="31" text-anchor="middle" font-weight="700">Raspberry Pi Pico</text>
+<text x="601" y="297" font-size="34" text-anchor="middle" font-weight="700">BSS138 #757</text>
+<text x="1008" y="297" font-size="34" text-anchor="middle" font-weight="700">GY-521</text>
+<text x="60" y="93" font-size="35" font-weight="700">3V3 OUT · 36번에서 세 곳으로 분기</text>
+<path d="M190 146H1007" fill="none" stroke="#BD3044" stroke-width="6"/>
+<path d="M190 606H1080" fill="none" stroke="#26364C" stroke-width="6"/>
+<text x="600" y="694" font-size="31" text-anchor="middle">공통 GND · Pico 물리 8번 · GY-521 AD0도 GND</text>
+<path d="M190 146V230" fill="none" stroke="#BD3044" stroke-width="6"/>
+<circle cx="190" cy="146" r="7" fill="#BD3044"/>
+<circle cx="190" cy="230" r="7" fill="#BD3044"/>
+<text x="190" y="267" font-size="29" text-anchor="middle">3V3 OUT</text>
+<path d="M526 146V230" fill="none" stroke="#BD3044" stroke-width="6"/>
+<circle cx="526" cy="146" r="7" fill="#BD3044"/>
+<circle cx="526" cy="230" r="7" fill="#BD3044"/>
+<text x="526" y="267" font-size="29" text-anchor="middle">HV</text>
+<path d="M671 146V230" fill="none" stroke="#BD3044" stroke-width="6"/>
+<circle cx="671" cy="146" r="7" fill="#BD3044"/>
+<circle cx="671" cy="230" r="7" fill="#BD3044"/>
+<text x="671" y="267" font-size="29" text-anchor="middle">LV</text>
+<path d="M1007 146V230" fill="none" stroke="#BD3044" stroke-width="6"/>
+<circle cx="1007" cy="146" r="7" fill="#BD3044"/>
+<circle cx="1007" cy="230" r="7" fill="#BD3044"/>
+<text x="1007" y="267" font-size="29" text-anchor="middle">VCC</text>
+<path d="M190 606V537" fill="none" stroke="#26364C" stroke-width="6"/>
+<circle cx="190" cy="606" r="7" fill="#26364C"/>
+<circle cx="190" cy="537" r="7" fill="#26364C"/>
+<text x="190" y="516" font-size="29" text-anchor="middle">GND</text>
+<path d="M526 606V537" fill="none" stroke="#26364C" stroke-width="6"/>
+<circle cx="526" cy="606" r="7" fill="#26364C"/>
+<circle cx="526" cy="537" r="7" fill="#26364C"/>
+<text x="526" y="516" font-size="29" text-anchor="middle">GND(B)</text>
+<path d="M671 606V537" fill="none" stroke="#26364C" stroke-width="6"/>
+<circle cx="671" cy="606" r="7" fill="#26364C"/>
+<circle cx="671" cy="537" r="7" fill="#26364C"/>
+<text x="671" y="516" font-size="29" text-anchor="middle">GND(A)</text>
+<path d="M944 606V537" fill="none" stroke="#26364C" stroke-width="6"/>
+<circle cx="944" cy="606" r="7" fill="#26364C"/>
+<circle cx="944" cy="537" r="7" fill="#26364C"/>
+<text x="944" y="516" font-size="29" text-anchor="middle">GND</text>
+<path d="M1080 606V537" fill="none" stroke="#26364C" stroke-width="6"/>
+<circle cx="1080" cy="606" r="7" fill="#26364C"/>
+<circle cx="1080" cy="537" r="7" fill="#26364C"/>
+<text x="1080" y="516" font-size="29" text-anchor="middle">AD0</text>
+<path d="M336 365H433" fill="none" stroke="#315DAB" stroke-width="6"/>
+<path d="M767 365H864" fill="none" stroke="#315DAB" stroke-width="6"/>
+<circle cx="336" cy="365" r="7" fill="#315DAB"/>
+<circle cx="433" cy="365" r="7" fill="#315DAB"/>
+<circle cx="767" cy="365" r="7" fill="#315DAB"/>
+<circle cx="864" cy="365" r="7" fill="#315DAB"/>
+<text x="229" y="376" font-size="33" text-anchor="middle">GP4 / SDA</text>
+<text x="478" y="376" font-size="33" text-anchor="middle">B1</text>
+<text x="726" y="376" font-size="33" text-anchor="middle">A1</text>
+<text x="931" y="376" font-size="33" text-anchor="middle">SDA</text>
+<path d="M336 444H433" fill="none" stroke="#196B57" stroke-width="6"/>
+<path d="M767 444H864" fill="none" stroke="#196B57" stroke-width="6"/>
+<circle cx="336" cy="444" r="7" fill="#196B57"/>
+<circle cx="433" cy="444" r="7" fill="#196B57"/>
+<circle cx="767" cy="444" r="7" fill="#196B57"/>
+<circle cx="864" cy="444" r="7" fill="#196B57"/>
+<text x="229" y="455" font-size="33" text-anchor="middle">GP5 / SCL</text>
+<text x="478" y="455" font-size="33" text-anchor="middle">B2</text>
+<text x="726" y="455" font-size="33" text-anchor="middle">A2</text>
+<text x="931" y="455" font-size="33" text-anchor="middle">SCL</text>
+</svg></main></body></html>
